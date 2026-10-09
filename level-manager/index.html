@@ -1,0 +1,1279 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Manuals for the R.O.B Tools Blender add-on suite">
+      
+      
+        <meta name="author" content="Robert Allsopp">
+      
+      
+        <link rel="canonical" href="https://newdeal666.github.io/rob-tools-manual/level-manager/">
+      
+      
+        <link rel="prev" href="../material-id-setter/">
+      
+      
+        <link rel="next" href="../tools/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Level Manager - R.O.B Tools</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#level-manager" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="R.O.B Tools" class="md-header__button md-logo" aria-label="R.O.B Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            R.O.B Tools
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Level Manager
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to dark"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to light"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="R.O.B Tools" class="md-nav__button md-logo" aria-label="R.O.B Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    R.O.B Tools
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manuals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manuals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../high-low-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High/Low Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R.O.B Baker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material-id-setter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material ID Setter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Manager
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assign-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assign / Edit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organise
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gap-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap Check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-section-start-to-finish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A section, start to finish
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R.O.B Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preferences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screenshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screenshots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assign-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assign / Edit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organise
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gap-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap Check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-section-start-to-finish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A section, start to finish
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="level-manager">Level Manager<a class="headerlink" href="#level-manager" title="Permanent link">&para;</a></h1>
+<p>Cuts an environment into named <strong>sections</strong>, keeps each one's meshes,
+collision and naming in order, and exports one Unity-ready FBX per section.</p>
+<p>Sidebar (<strong>N</strong>) → <strong>R.O.B Tools</strong> tab → <strong>Level</strong>.</p>
+<p><img alt="The panel" src="../screenshots/level-manager/00-overview.png" /></p>
+<hr />
+<h2 id="the-idea">The idea<a class="headerlink" href="#the-idea" title="Permanent link">&para;</a></h2>
+<p>A level is too big to be one FBX and too connected to be one object per file.
+So it is cut into sections — <code>ClockTower</code>, <code>Courtyard</code>, <code>Gatehouse</code> — and each
+section becomes one FBX carrying its meshes and its collision together.</p>
+<p>Objects are <strong>tagged</strong> with a section rather than moved by hand. The tag is
+what everything else reads: the collection tree, the naming, the export, and
+the moved-object check. Rebuild can therefore be run at any time and will put
+everything back where it belongs.</p>
+<p>The <strong>Section</strong> field at the top is the active section — the one <strong>Assign</strong>
+adds to.</p>
+<hr />
+<h2 id="assign-edit">Assign / Edit<a class="headerlink" href="#assign-edit" title="Permanent link">&para;</a></h2>
+<p><img alt="Assign / Edit" src="../screenshots/level-manager/01-show_assign.png" /></p>
+<p>Closed, the header carries the three things used constantly: <strong>Assign</strong>, the
+part name field, and <strong>Set</strong>. The rest is setup, used while a section is being
+built and not once it is running.</p>
+<p><strong>Assign Selected to Section</strong> tags the selection with the active section and
+captures each object's transform — that snapshot is what the move check later
+compares against.</p>
+<p><strong>Remove Selected from Section</strong> frees just those objects: the tag is cleared
+and they drop out of the section's collection. The meshes stay.</p>
+<p><strong>Part Name</strong> + <strong>Set</strong> renames the trailing part of the selected objects —
+<code>Wall</code> → <code>Window</code> — without touching the type prefix.</p>
+<p>Anything tagged to a <em>different</em> section is moved into the one in the
+<strong>Section</strong> box first, so duplicating a mesh out of one section and naming it
+a part of another lands where the box says. Leave the Section box empty to
+rename in place, which is what a plain part rename inside one section wants.</p>
+<p>An <strong>anchor</strong> rides in <strong>every</strong> section's FBX, at its true world position.
+Every section then has the same cube at the same spot, so in Unity you can
+vertex-snap (<strong>V</strong>) one section's <code>ANCHOR</code> onto another's to line the
+sections back up after moving or re-importing one — then untick the
+<code>ANCHOR</code>s.</p>
+<ul>
+<li><strong>Add Anchor</strong> drops a 1 m cube named <code>ANCHOR</code> at the 3D cursor.</li>
+<li><strong>Mark Anchor</strong> makes the selected mesh the anchor — your Unity reference
+  cube, say. A mesh, not an empty: snapping needs vertices.</li>
+<li><strong>Clear</strong> un-marks it.</li>
+</ul>
+<p>Anchors live in <code>_References</code> and stay out of the sections and the move
+check. Hide one in Blender if it is in the way — hidden or not, it is
+exported.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Earlier versions had <strong>Mark Reference</strong>, which kept an object out of the
+export entirely. Objects marked that way stay out; <strong>Clear</strong> un-marks
+them too.</p>
+</div>
+<p><strong>CM</strong> / <strong>CVM</strong> mark the selection as collision. Concave (<code>CM_</code>) and convex
+(<code>CVM_</code>) are named with their prefix, sorted into a <code>_Collision</code>
+sub-collection, and exported <strong>inside the same section FBX</strong> so they can be
+wired up in Unity. <strong>Clear</strong> turns them back into normal render meshes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The two collision buttons are labelled with your own prefixes, so if you
+change <code>CM_</code> to <code>UCX_</code> the buttons say so.</p>
+</div>
+<p>Collision is listed <strong>under the part it is for</strong>. Fold a part open and its
+collision pieces are underneath; the <strong>Collision</strong> row at the bottom lists
+only the pieces that are not for any one part. This is only where the panel
+lists them — every piece still lives in the section's one Collision
+collection and exports from there.</p>
+<p>On every part and Collision row, <strong>+</strong> files the selection in as a render
+mesh and the <strong>cube</strong> adds it as collision, opening <strong>CM – concave</strong> /
+<strong>CVM – convex</strong>:</p>
+<ul>
+<li>A <strong>part's</strong> cube marks the selection as collision <em>for that part</em>.</li>
+<li>The <strong>Collision</strong> row's cube marks it as loose collision in that section.</li>
+<li><strong>Make Collision</strong> goes to the <strong>section and part of the mesh it is made
+  from</strong> — whatever the Section box says — so collision built from a piece
+  lands in that piece's section, under its part. Only a mesh in no section
+  uses the Section box. With a selection spanning sections, the active mesh
+  decides and the report says so. It is <strong>named after that part</strong> too — the
+  Part Name box is ignored for a mesh in a section; only a mesh in no section
+  takes its name from the box (or its own name, with the box empty).
+  <strong>Rebuild</strong> uses the remembered part to find its source again.</li>
+<li>Marking a render mesh that already belongs to a part (a duplicate of the
+  piece it collides for) keeps it with that part.</li>
+<li>A piece named after a part (<code>CM_…_WarTower_1</code>) counts as that part's.</li>
+</ul>
+<p>To move a loose piece under a part, select it and use that part's cube.</p>
+<p>"Collision" is never a part name — Assign and Set refuse it and point you to
+the cube, because a part called Collision would sit in the collision list as
+a render mesh.</p>
+<p>A collision piece with a live decimate shows a <strong>Planar | Collapse</strong> switch
+beside its dial:</p>
+<ul>
+<li><strong>Planar</strong> (the default) merges flat faces within an angle and never moves
+  the outline — right for walls, stairs and gates.</li>
+<li><strong>Collapse</strong> thins by a ratio, starting at half the faces. It gets rounded
+  things — rocks, rubble — far lighter than Planar can, but it moves vertices,
+  so check the outline still fits before you <strong>Apply</strong>.</li>
+</ul>
+<p>The choice is per piece, survives a <strong>Rebuild</strong>, and switching back to Planar
+lands on the angle you had.</p>
+<p>Tick <strong>Tri</strong> at the start of the dial row and <strong>Apply</strong> triangulates the piece
+too, straight after freezing the decimate — Quad and N-gon both set to
+<strong>Beauty</strong>. It is per piece, off until you tick it, and kept through a Rebuild.</p>
+<p><strong>Lightmap UVs</strong> copies each selected mesh's first UV map into a <code>Lightmap</code>
+UV map in its <strong>second</strong> slot — the one Unity bakes lightmaps into (uv2).</p>
+<ul>
+<li><code>Lightmap</code> becomes the <strong>active</strong> UV map, so the UV Editor shows it and
+  your edits — pulling overlapping islands apart, say — go into it. Your
+  texture UVs stay the <strong>render</strong> map, so materials still map by them.</li>
+<li>Press it again to re-copy after changing the texture UVs. If a <code>Lightmap</code>
+  no longer matches its <code>UVMap</code> — you have edited it — it asks before
+  copying over it.</li>
+<li>Collision is skipped, and so is a mesh with no UV map to copy. A mesh whose
+  second UV map is already something else is skipped and named in the report
+  — Unity would bake into that one.</li>
+<li>Unity wants lightmap UVs inside the 0–1 square and not overlapping. The
+  report names any mesh whose UVs go outside the square (a tiling trim sheet,
+  say). Overlapping islands — mirrored or stacked pieces — it cannot see: those
+  share lightmap texels and bake with each other's light.</li>
+</ul>
+<p><strong>Check Lightmaps</strong>, beside it, answers <em>have we done them all?</em> It goes over
+every mesh in every section (collision not counted) and reports how many have
+a <code>Lightmap</code> map in the second slot inside the 0–1 square, which sections
+still have some to do, and why:</p>
+<ul>
+<li><strong>missing</strong> — no second UV map at all.</li>
+<li><strong>not in slot 2</strong> — the second map is something else, or <code>Lightmap</code> is not
+  second. Unity bakes into whatever is second.</li>
+<li><strong>outside the 0–1 square</strong> — Unity will not bake it cleanly.</li>
+</ul>
+<p>It <strong>selects the meshes still to do</strong>, so the next press can be Lightmap UVs
+on exactly those (it fills the missing ones; the other two need a look).
+Hidden meshes are counted but cannot be selected.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Unity, leave <strong>Generate Lightmap UVs</strong> unticked on the model's import
+settings, or Unity replaces these with its own.</p>
+</div>
+<hr />
+<h2 id="organise">Organise<a class="headerlink" href="#organise" title="Permanent link">&para;</a></h2>
+<p><img alt="Organise" src="../screenshots/level-manager/03-show_organise.png" /></p>
+<p>Prefixes are typed once per project; <strong>Rebuild</strong> and <strong>Center Origins</strong> are
+pressed all day — so those two are what the closed header shows.</p>
+<p><strong>Rebuild Collections &amp; Rename</strong> sorts every tagged object into
+<code>LevelManager → SEC_&lt;section&gt; → &lt;asset&gt;</code> and applies the naming convention.
+Run it whenever things have drifted.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mesh Type</strong></td>
+<td>Asset-type prefix on mesh names, <code>SM_</code> for Static Mesh</td>
+</tr>
+<tr>
+<td><strong>Collision</strong> / <strong>Convex</strong></td>
+<td>The two collision prefixes</td>
+</tr>
+<tr>
+<td><strong>Prefix</strong></td>
+<td>An extra prefix in front of everything, object names and FBX files. Usually blank</td>
+</tr>
+<tr>
+<td><strong>Rename on Organise</strong></td>
+<td>Whether Rebuild renames as well as sorts</td>
+</tr>
+<tr>
+<td><strong>Live Apply</strong></td>
+<td>Move and rename immediately on assign, rather than waiting for Rebuild</td>
+</tr>
+</tbody>
+</table>
+<p>A trailing underscore is added to every prefix automatically — type <code>SM</code>, get
+<code>SM_</code>.</p>
+<p><strong>Check for Moved Objects</strong> compares each object's current geometry centre
+against the one captured when it was tagged, and flags what actually drifted.
+This is the cause of pieces landing in the wrong place in Unity. Editing an
+origin does <strong>not</strong> trip it — only the geometry moving does.</p>
+<p><strong>Center Origins (Bounds)</strong> sets the selected meshes' origins to their
+bounding-box centre. The geometry does not move, so Unity placement is
+unchanged; it just gives each piece a sensible pivot to drag by.</p>
+<h3 id="lights">Lights<a class="headerlink" href="#lights" title="Permanent link">&para;</a></h3>
+<p>Lights are filed like meshes, on their own track. <strong>Assign</strong> takes a
+selected light the same way it takes a mesh: it goes to the section's own
+<code>SEC_&lt;section&gt;__Lights</code> collection and is named with the <strong>Light</strong> prefix —
+<code>LT_BakeUnit_OvenGlow</code>. Rebuild keeps them sorted and named from then on.</p>
+<p><strong>Organise Lights</strong> (the lamp on the closed header too) files every light in
+the scene in one press:</p>
+<ul>
+<li>A light that already has a section stays in it.</li>
+<li>One without is given the section whose geometry it sits in or beside —
+  <strong>Nearest Section</strong>, measured to the actual faces, not the bounding box, so
+  the glow in front of an oven door goes to the oven rather than to the room
+  it stands in. Only within <strong>Reach</strong>.</li>
+<li>A <strong>sun</strong>, and anything further than Reach from every section, is lighting
+  the whole level. It goes to <code>LevelManager → _Lighting</code>, named with the
+  prefix but no section, and never rides in a section's FBX.</li>
+</ul>
+<p>Organise Lights ignores the Section box — position decides. When a press
+sends a light to <code>_Lighting</code> because it was out of Reach, the report names it,
+with the section it was nearest and how far off it was — a lamp hung in the
+middle of a room is metres from every surface. To put one in a section
+anyway, select it and press <strong>Assign Selected to Section</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Light</strong></td>
+<td>Prefix on light names, <code>LT_</code></td>
+</tr>
+<tr>
+<td><strong>Nearest Section</strong></td>
+<td>Whether Organise Lights places section-less lights by position. Off, they all go to <code>_Lighting</code></td>
+</tr>
+<tr>
+<td><strong>Reach</strong></td>
+<td>How close to a section's geometry a light must be to count as its</td>
+</tr>
+</tbody>
+</table>
+<p>Assign a light by hand to overrule where Organise Lights would put it; a
+light with a section is never moved by it.</p>
+<hr />
+<h2 id="gap-check">Gap Check<a class="headerlink" href="#gap-check" title="Permanent link">&para;</a></h2>
+<p><strong>Gap Check</strong> puts a glowing sphere around the level with its faces turned
+inward. From inside, every gap — a missing face, a seam that does not quite
+meet — shows as a patch of the swatch's colour. Recolouring the sky does not
+do this: the sky tints everything, the sphere only shows through holes.</p>
+<ul>
+<li>It sizes itself to the tagged sections (a quarter bigger than their
+  corners), centred on them. With nothing tagged yet it fits every mesh in
+  the scene.</li>
+<li>Base, emission and viewport colour all match at emission strength 1, so a
+  gap reads as one flat colour in Material Preview, Rendered, and Solid.
+  Change the swatch and it recolours live — pick a colour nothing in the
+  level uses.</li>
+<li>From outside, the sphere is invisible (its faces point in and backface
+  culling hides them), so you can still orbit the level.</li>
+<li>It casts no shadow, cannot be clicked on in the viewport, lives in
+  <code>LevelManager → _GapCheck</code>, and is never exported.</li>
+</ul>
+<p>Press it again to take the sphere away; press it once more to refit it after
+the level has grown.</p>
+<hr />
+<h2 id="sections">Sections<a class="headerlink" href="#sections" title="Permanent link">&para;</a></h2>
+<p>The list of what exists, with a count per section.</p>
+<p>Each row: an <strong>eye</strong>, the section <strong>name</strong> (press it to make it active — no
+retyping), <strong>Solo</strong> to hide every other section, <strong>select</strong>, <strong>export this
+one</strong>, and <strong>remove</strong>.</p>
+<p><strong>Select</strong> picks that row's meshes in the viewport. Shift-click adds to the
+current selection; Ctrl+Shift-click widens by one level — a piece reaches its
+collection, a collection reaches its section, a section reaches the level.</p>
+<p>If everything on the row is hidden, select <strong>reveals it first</strong> rather than
+refusing: you asked for those meshes by name, and the add-on is what hid them.
+A row with only <em>some</em> of its meshes hidden still selects just what is
+showing, so a section click does not drag a deliberately hidden Collision
+back into view. The button greys out outside Object Mode.</p>
+<p><strong>Remove Section</strong> (the row's <strong>X</strong>) asks first. By default it un-assigns rather than deletes: the tag is cleared and the
+section drops out, and the meshes stay in your scene. Tick <strong>Also delete the meshes</strong> in the dialog to delete them instead — collision included, and Ctrl+Z brings them back. The tick never carries over: every dialog opens on keep.</p>
+<p>A row with lights says so: <code>BakeUnit  (9 + 2 lights)</code>. Removing a section
+frees its lights along with its meshes (or deletes them, with the dialog's
+box ticked).</p>
+<p>The eye at the top right of the box un-hides everything in every section — the
+sections, their parts, Lights and Collision, and pieces hidden one by one or
+by Solo, whether by the eye, Exclude or the monitor. The Gap Check sphere and
+anchors are left as they are. <strong>Collision</strong>, beside
+it, shows or hides the Collision collection in every section at once — it hides
+them all if any are showing, so a mixed level comes out consistent in one click.</p>
+<p><strong>Lights</strong>, beside that, does the same for every section's Lights and the
+scene-wide <code>_Lighting</code> — appears once Organise Lights has filed any.</p>
+<p><strong>Scale Ref</strong> appears beside it when the scene has R.O.B Tools' <strong>Scale Ref</strong>
+collection, and shows or hides the scale characters. It is the same switch as
+the eye in Tools, so the two always agree. Levels without one never see it.</p>
+<hr />
+<h2 id="export">Export<a class="headerlink" href="#export" title="Permanent link">&para;</a></h2>
+<p><img alt="Export" src="../screenshots/level-manager/02-show_export.png" /></p>
+<p>One Unity-ready FBX per section, written to the output folder. The button
+stays on the header when the box is shut, because the folder and the flags
+are set once per project and the button is the section.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Output Folder</strong></td>
+<td>Where the FBX files go. The field's own button browses for a folder</td>
+</tr>
+<tr>
+<td><strong>Open Export Folder</strong></td>
+<td>Opens that folder in your file browser, creating it first if needed</td>
+</tr>
+<tr>
+<td><strong>File Prefix</strong></td>
+<td>On the filenames, e.g. <code>SEC_ClockTower.fbx</code></td>
+</tr>
+<tr>
+<td><strong>Apply Transform</strong></td>
+<td>Bakes the Blender→Unity axis conversion so pieces import upright</td>
+</tr>
+<tr>
+<td><strong>Triangulate</strong></td>
+<td>Triangulate on export</td>
+</tr>
+<tr>
+<td><strong>Smoothing</strong></td>
+<td><em>Face</em> suits most Unity assets; <em>Normals Only</em> for smoothed organics</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>Leave at 1.0 for Unity</td>
+</tr>
+<tr>
+<td><strong>Props</strong></td>
+<td>Writes the <code>rlm_*</code> tags, including the original name, into the FBX</td>
+</tr>
+<tr>
+<td><strong>Lights</strong></td>
+<td>Includes each section's lights in its FBX. Off by default. <code>_Lighting</code> never exports. Unity reads them with <strong>Import Lights</strong> ticked</td>
+</tr>
+</tbody>
+</table>
+<p>Collision meshes ride inside their section's FBX. Reference objects never
+export.</p>
+<hr />
+<h2 id="a-section-start-to-finish">A section, start to finish<a class="headerlink" href="#a-section-start-to-finish" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Type a name in <strong>Section</strong>.</li>
+<li>Select the meshes, press <strong>Assign</strong>.</li>
+<li>Select the collision shapes, press <strong>CM</strong> or <strong>CVM</strong>.</li>
+<li>Press <strong>Rebuild</strong> to sort and name everything.</li>
+<li>Set the output folder once, then <strong>Export All Sections</strong>.</li>
+</ol>
+<p>From there it is <strong>Assign</strong> and <strong>Rebuild</strong> as the level grows, with <strong>Check
+for Moved Objects</strong> before an export if pieces have been nudged around.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © Robert Allsopp
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "toc.follow", "search.suggest", "search.highlight", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

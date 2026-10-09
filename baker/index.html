@@ -1,0 +1,2014 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Manuals for the R.O.B Tools Blender add-on suite">
+      
+      
+        <meta name="author" content="Robert Allsopp">
+      
+      
+        <link rel="canonical" href="https://newdeal666.github.io/rob-tools-manual/baker/">
+      
+      
+        <link rel="prev" href="../high-low-manager/">
+      
+      
+        <link rel="next" href="../material-id-setter/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>R.O.B Baker - R.O.B Tools</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rob-baker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="R.O.B Tools" class="md-header__button md-logo" aria-label="R.O.B Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            R.O.B Tools
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              R.O.B Baker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to dark"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to light"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="R.O.B Tools" class="md-nav__button md-logo" aria-label="R.O.B Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    R.O.B Tools
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manuals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manuals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../high-low-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High/Low Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R.O.B Baker
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R.O.B Baker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#four-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Four tabs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#painted-offset-and-the-minmax-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Painted offset, and the Min/Max range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skew-painting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skew painting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-group-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The group list
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grouping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#texture-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Texture sets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ao-distance-cavity-weight-and-distance-falloff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AO Distance, Cavity Weight and Distance Falloff
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AO Distance, Cavity Weight and Distance Falloff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matching-a-marmoset-toolbag-bake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matching a Marmoset Toolbag bake
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#native-tracer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native Tracer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prepare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-poly-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Poly Cache
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cycles-passes-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cycles passes only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometry-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-something-looks-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If something looks wrong
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material-id-setter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material ID Setter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R.O.B Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preferences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screenshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screenshots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#four-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Four tabs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#painted-offset-and-the-minmax-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Painted offset, and the Min/Max range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skew-painting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skew painting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-group-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The group list
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grouping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#texture-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Texture sets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ao-distance-cavity-weight-and-distance-falloff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AO Distance, Cavity Weight and Distance Falloff
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AO Distance, Cavity Weight and Distance Falloff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matching-a-marmoset-toolbag-bake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matching a Marmoset Toolbag bake
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#native-tracer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native Tracer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prepare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-poly-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Poly Cache
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cycles-passes-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cycles passes only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometry-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-something-looks-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If something looks wrong
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="rob-baker">R.O.B Baker<a class="headerlink" href="#rob-baker" title="Permanent link">&para;</a></h1>
+<p>Bakes high-poly detail onto low-poly meshes: normals, AO, curvature, the whole
+set. It reads High/Low Manager's assets directly, traces on a bundled native
+tracer instead of Cycles where it can, and gives you cages, skew painting and
+edge protection to fix the things that go wrong at hard edges.</p>
+<p>Sidebar (<strong>N</strong>) → <strong>R.O.B Tools</strong> tab → <strong>Bake</strong>.</p>
+<p>Runs on <strong>Windows and Linux</strong>, Blender 4.2 and newer. macOS is not supported yet.</p>
+<p><img alt="The panel, on the Setup tab with its section closed" src="../screenshots/baker/00-overview.png" /></p>
+<hr />
+<h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<p>Open a scene with a high poly and a low poly named <code>Crate_high</code> and
+<code>Crate_low</code>. Check the readout under the mode switch shows the asset you
+expect, tick your maps, set the output folder, press <strong>Bake Groups</strong>.</p>
+<p>Maps land in the output folder — <code>//bakes/</code> by default, beside your <code>.blend</code> —
+and with <em>Preview After Bake</em> on, the finished Normal + AO appears on your low
+straight away.</p>
+<p>That is the whole loop. Everything below is about scaling it up.</p>
+<p><strong>Next Steps</strong> tracks that loop for you. Collapsed it is one line: the single
+most useful thing to do next, and the button that does it. Expanded it is the
+whole checklist, with ticks for done, grey for not reached, and a magnifier
+that jumps to the section owning each step. Turn it off in preferences once
+the workflow is second nature.</p>
+<hr />
+<h2 id="four-tabs">Four tabs<a class="headerlink" href="#four-tabs" title="Permanent link">&para;</a></h2>
+<p>The panel shows one tab at a time, in the same style as High/Low Manager's
+tabs.</p>
+<table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Setup</strong></td>
+<td>Everything you set before a bake: output, resolution, cage, edge protection, painting, and the group list</td>
+</tr>
+<tr>
+<td><strong>Maps</strong></td>
+<td>What gets baked</td>
+</tr>
+<tr>
+<td><strong>Advanced</strong></td>
+<td>Backends, tracer settings, Cycles-only passes, geometry preparation</td>
+</tr>
+<tr>
+<td><strong>Logs</strong></td>
+<td>The last bake summed up, Copy Report, and the full log</td>
+</tr>
+</tbody>
+</table>
+<p>Under the tabs, the same on every tab, is the bake strip: <strong>Bake Groups</strong>,
+<strong>Pause</strong> and <strong>Stop</strong> (greyed until a bake runs), <strong>Offline / Live</strong>, and the
+preview views: <strong>All Meshes</strong> and <strong>Done</strong>, then <strong>Normal + AO</strong>, <strong>Full PBR</strong>
+and <strong>Edge Mask</strong>. The asset readout, the Ready line and Next Steps
+sit under it on every tab too, so an error shows whichever tab is open.</p>
+<p>Offline / Live is the tracer's scene mode.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Stay on Offline.</strong> Live mode currently deadlocks on this build. It is a
+known issue, not a setting you need — Offline produces identical maps.</p>
+</div>
+<hr />
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p><img alt="Setup" src="../screenshots/baker/08-ui_groups.png" /></p>
+<p>Setup is split into named blocks, top to bottom: <strong>Output</strong>, <strong>Quality</strong>,
+<strong>Edge Protection</strong>, <strong>Cage</strong>, <strong>Paint</strong> and <strong>Groups</strong>. Each one folds. A
+closed block shows its current settings on the header (Output <code>PNG 8-bit</code>,
+Quality <code>16 spp AA 2</code>, Groups <code>3/3 on</code>), so you can still see what the bake
+will do with Setup folded. The arrow button on the Setup header folds every
+block at once, which leaves an outline you can scan in one glance. Press it
+again to open them all.</p>
+<p><strong>Group By</strong> sits above the blocks because it decides what the Groups list
+holds.</p>
+<h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
+<p><strong>Output</strong> defaults to <code>//bakes/</code>. The field turns red when the path is not
+valid yet or the file is unsaved.</p>
+<p><strong>Format</strong> and bit depth sit under it.</p>
+<p><strong>Padding</strong> is the bake margin in pixels.</p>
+<p><strong>Fill</strong> (on by default) fills everything between the UV islands with the
+colour of the nearest island, as Marmoset Toolbag does, instead of leaving it
+black or flat. A texture read at a distant mip blends the gaps into the
+islands, so an empty gap shows up in-engine as a dark seam around every
+island; filled, it cannot. The Edges and Wireframe masks are left alone.</p>
+<h3 id="quality">Quality<a class="headerlink" href="#quality" title="Permanent link">&para;</a></h3>
+<p><strong>Device</strong> is where the native tracer runs.</p>
+<p><strong>Samples</strong> applies to ray-traced maps. 16 is a good default for AO, and lower
+works when Edge Protection is cleaning up after it.</p>
+<p><strong>Geo AA</strong> and <strong>Post AA</strong> are the tracer's antialiasing.</p>
+<p><strong>Denoise AO</strong> runs an edge-preserving bilateral filter after
+baking. Noise averages out while real occlusion edges stay sharp, so Samples
+can drop to 4–6 for a three-to-four-times faster AO at comparable quality.</p>
+<p><strong>UDIM</strong> switches to per-tile output. Every tile the low's UVs occupy bakes as
+its own full pass, with <strong>that tile's islands shifted into 0–1</strong> — so cages,
+skew, edge protection and denoise all apply per tile rather than being
+stretched across the whole layout. Maps save as <code>{name}.{tile}.png</code>, the
+naming Painter, Marmoset and engines auto-detect.</p>
+<p>Each group's row gains a tile strip listing the tiles it occupies, with
+All / None above. Baking three of six re-bakes only those three and leaves the
+other files untouched — which is what you want when one part of a large asset
+changed.</p>
+<p>Skew and offset painting get a UDIM canvas so strokes land on every tile;
+those canvas tile files live in <code>{output}/paint_maps</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With UDIM <strong>off</strong>, islands outside 0–1 simply do not bake. That is the
+offset-mirror workflow, where a mirrored half is parked outside the tile
+on purpose.</p>
+</div>
+<p><strong>Ignore Groups</strong> hides every other group's meshes from rays while
+each group bakes — Marmoset's <em>Ignore Groups</em>. Use it when separate parts in
+one scene shadow each other's AO, thickness or height. Sub-groups of the same
+combined asset still see each other, so an asset keeps self-occluding
+correctly.</p>
+<p><strong>Ignore Backfaces</strong> makes bake rays pass through back-facing
+polygons. Enable it when thin or one-sided floaters bake with inverted shading
+or hard silhouette artifacts: the ray meets the floater's back, passes
+through, and finds the real surface underneath.</p>
+<p>It deliberately does <em>not</em> remove floaters from occlusion. A floater whose
+<strong>front</strong> faces your low still occludes it and keeps its contact shadow in AO
+— if it deleted floaters from occlusion, every panel you floated would stop
+casting the shadow you floated it to cast.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>On Cycles this setting does nothing.</strong> It is implemented by making back
+faces transparent, and that cannot reach a selected-to-active bake: Cycles
+resolves the projection hit geometrically and then shades it, so a
+transparent shader never gets the chance to let the ray continue. Measured
+against a flipped floater it changes a normal bake by 0.00000. The bake
+warns you before it starts. Switch <strong>Normals Backend</strong> to <em>Native</em>.</p>
+</div>
+<p><strong>Material sets</strong> and <strong>Merged</strong> (in Output) are the texture-set and speed
+options; see Grouping below.</p>
+<p><strong>Global Res</strong> sits in Groups, just above the list whose per-group Res column
+falls back to it. It offers 1K–8K presets plus <em>Custom</em>, which has independent
+<strong>Width (X)</strong> and <strong>Height (Y)</strong> for non-square trim sheets. Width runs left to
+right (U in the UV editor) and height bottom to top (V). Non-square sizes bake
+on the native tracer like any other.</p>
+<h3 id="cage">Cage<a class="headerlink" href="#cage" title="Permanent link">&para;</a></h3>
+<p><img alt="Cage" src="../screenshots/baker/05-ui_groups--ui_cage.png" /></p>
+<p><strong>Generate Missing Cages</strong> creates a cage for every low without one, named
+<code>{low}_cage</code>. With <strong>Use Cages When Present</strong> on, baking projects through them
+automatically.</p>
+<p><strong>Cage Offset</strong> is the base uniform inflation. With <strong>Live</strong> on, dragging it
+rebuilds the active object's cage in realtime — note a rebuild discards sculpt
+edits, same as <strong>Reset</strong>.</p>
+<p><strong>Sculpt</strong> enters sculpt mode on the active object's cage: Grab skews ray
+direction, inflate and deflate adjust coverage locally. <strong>Reset</strong> rebuilds
+from the low.</p>
+<p><em>Cage Extrusion</em> and <em>Max Ray Dist</em> are the uniform ray-start distance and
+search depth used when no cage is present.</p>
+<h3 id="painted-offset-and-the-minmax-range">Painted offset, and the Min/Max range<a class="headerlink" href="#painted-offset-and-the-minmax-range" title="Permanent link">&para;</a></h3>
+<p><strong>Paint Offset</strong> paints cage coverage instead of sculpting it. The map is read
+per texel by the tracer, so the cage can be tight in one place and generous in
+another without a single sculpt stroke.</p>
+<p>The three values that decide what the paint <em>means</em>:</p>
+<table>
+<thead>
+<tr>
+<th>Painted value</th>
+<th>Cage offset used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Black</td>
+<td><strong>Min</strong></td>
+</tr>
+<tr>
+<td>Grey (unpainted, 0.5)</td>
+<td><strong>Cage Offset</strong></td>
+</tr>
+<tr>
+<td>White</td>
+<td><strong>Max</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Min and Max are per group.</strong> The two fields edit the group of whichever low
+is selected; with nothing selected they edit the global pair. The cell at the
+end of the row says which: a <strong>globe</strong> means this group follows the global
+pair, an <strong>X</strong> means it has its own — press it to hand the group back to
+Global.</p>
+<p>This is the same arrangement Marmoset has, where each cage carries its own
+min and max, except that here you do not have to select the cage to find out
+what its numbers are.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Why this matters: a neutral grey canvas means <em>Cage Offset</em>, not the
+midpoint of nothing. With a Max of 1 m and no painting, an enclosed
+interior projects the outside of the object onto its inner walls. Set the
+group's Max to something near the actual gap and the interior comes back.</p>
+</div>
+<p><strong>Apply to Cage</strong> bakes the painted offset into the cage mesh. It is the one
+route a <strong>Cycles</strong> bake has to a painted offset — the tracer reads the map per
+texel, Cycles cannot. It consumes the canvas, so it is greyed during a paint
+session and when there is no map.</p>
+<p>The paint resolution is its own control, beside the cost readout. The canvas
+is a mask resampled into whatever the bake is, so a 16K bake does not mean
+painting on a 16K canvas.</p>
+<h3 id="skew-painting">Skew painting<a class="headerlink" href="#skew-painting" title="Permanent link">&para;</a></h3>
+<p>Averaged cage rays smear detail near bevels. Skew painting fixes it: paint
+white where bake rays should fire straight along the face normal instead. A
+second straight-ray pass is baked and blended per pixel wherever the map is
+white.</p>
+<p><strong>Max Hit Deviation</strong> is skew's ray-distance control — Blender ignores Max Ray
+Dist when a cage is used. Straight-ray hits landing farther than this from the
+averaged-ray hit fall back to the averaged projection, which stops rays diving
+into recesses and baking black AO.</p>
+<p><strong>Shaded painting.</strong> By default you paint over the asset's baked Normal + AO,
+Marmoset-style, rather than on a black canvas. Strokes show as a coloured tint
+— red for skew, blue for offset — while the saved map stays pure
+white-on-black. If the asset has never been baked, a quick 512px preview bake
+runs first so there is always something to paint over. The brush is forced to
+white every time a session starts, so the canvas defaults cannot trick you
+into painting black on black.</p>
+<p><strong>Painted maps are saved with the .blend.</strong> Canvases are packed into the file
+on <strong>Done</strong> and again on every save. UDIM canvases are written to their tile
+files in a <code>paint_maps</code> folder beside the bakes. Either way, if a canvas
+cannot be written the panel shows a red <strong>Paint NOT saved</strong> warning naming it,
+and keeps showing it until a save succeeds.</p>
+<p><strong>Paint Whole Asset.</strong> With Combine on, painting joins all of the asset's lows
+into one paint mesh so strokes span sub-groups. Pressing Done writes the
+shared canvas back into every low's own map. This needs the shared,
+non-overlapping UV layout that combine mode requires anyway.</p>
+<h3 id="edge-protection">Edge Protection<a class="headerlink" href="#edge-protection" title="Permanent link">&para;</a></h3>
+<p><img alt="Edge Protection" src="../screenshots/baker/06-ui_groups--ui_edge.png" /></p>
+<p>Grazing rays at hard edges produce bright rings and speckle along UV island
+borders. Edge Protection bakes a UV-shell mask and cleans the outermost pixels
+of every island.</p>
+<p><strong>Mode</strong> — <em>Smooth (keep bevel)</em> averages each border ring only along the
+edge, removing speckle while keeping the bevel gradient. It is the right
+default. <em>Replace (flatten)</em> overwrites the border band from deeper inside the
+island, which flattens the edge; use sparingly.</p>
+<p><strong>Protect</strong> — <em>All Island Borders</em> treats every border pixel. <em>Sharp Edges
+Only</em> treats only pixels near edges marked Sharp on the low, so smooth UV
+seams — a cylinder's side seam, a mirror seam — get zero protection and the
+cleanup cannot print a seam line into the bake. If a low has no marked edges
+in Sharp mode the bake warns and skips protection rather than failing
+silently.</p>
+<p><em>Edge Width</em> is the number of border pixels at full protection — scale it with
+resolution, since 3px at 2K is roughly 12px at 8K. <em>Edge Blur</em> is the falloff
+inward.</p>
+<p><strong>Keep Skew Off Edges</strong> subtracts the edge band from the painted skew mask, so
+straight-on rays never fire at island borders where they graze or miss the
+bevel.</p>
+<p><strong>Preview Edge Mask</strong> shows exactly what will be protected, on the model,
+before you bake.</p>
+<h3 id="the-group-list">The group list<a class="headerlink" href="#the-group-list" title="Permanent link">&para;</a></h3>
+<p>Each row: include checkbox, ready tick, the group name with its tri counts, a
+per-group <strong>Res</strong> (defaulting to <em>Global</em>), and the L·H·C selection buttons —
+lows, highs, cages.</p>
+<p>The list strips the shared asset prefix so the distinguishing part stays
+readable, and a warning against a row means highs with no matching low.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the panel reports <strong>stale group pins</strong>, some pinned settings refer to
+groups that no longer exist. It tells you rather than deleting them, with
+a button to clear them when you are sure.</p>
+</div>
+<hr />
+<h2 id="grouping">Grouping<a class="headerlink" href="#grouping" title="Permanent link">&para;</a></h2>
+<p>The mode dropdown decides how highs and lows are matched, and the readout
+always shows what the active object resolves to.</p>
+<p><strong>Object Names</strong> — meshes whose names end with the suffixes, default <code>_low</code>
+and <code>_high</code>. Fastest for single props.</p>
+<p><strong>Collections</strong> — collections named <code>{base}_low</code> and <code>{base}_high</code>; every mesh
+inside is grouped and object names are ignored. Use it when a "high" is really
+a pile of floaters.</p>
+<p><strong>R.O.B HLM Assets</strong> — reads High/Low Manager's asset collections, including
+sub-groups. With the HL Manager installed, new scenes default to this.</p>
+<p>Two options appear in HLM mode:</p>
+<p><strong>Combine Asset (one texture set)</strong> bakes all of an asset's sub-groups into
+one shared set named after the asset, instead of one set per sub-group.
+Sub-groups still project only onto their own lows. Needs one non-overlapping
+UV layout across all lows.</p>
+<p><strong>Merged Bake (fast)</strong> additionally joins copies of the lows and cages into
+single temporary objects and bakes once per map instead of once per sub-group
+— ten sub-groups means ten times fewer bake calls. Sculpted cages and painting
+carry over, and Mirror-modified lows work because the merge is built from
+evaluated meshes.</p>
+<p>A single bake call cannot hide groups from each other, so with <strong>Groups Ignore
+Each Other</strong> on, sub-groups are auto-exploded to 4× their size for the
+duration and restored afterwards. Your originals are never modified.</p>
+<p><strong>Detect Lows by Material</strong> identifies lows by bake-set materials instead of
+<code>_low</code>/<code>_high</code> collections — exactly how Substance Painter splits sets by
+material, so exporting the low gives correctly named Painter sets for free.
+See <a href="#texture-sets">Texture sets</a>.</p>
+<hr />
+<h2 id="texture-sets">Texture sets<a class="headerlink" href="#texture-sets" title="Permanent link">&para;</a></h2>
+<p>A texture set is one set of output maps. How an asset is divided into sets is
+decided by the <strong>materials on the lows</strong>, and <strong>Create Bake Materials</strong> is
+what puts them there — in the Baker's own Setup, or from the High/Low
+Manager's asset panel. Both write the same thing.</p>
+<p>The material name <em>is</em> the set name, kept clean with no <code>_low</code> suffix, so it
+is also the Painter texture set and the baked file name.</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>One set per</th>
+<th>Needs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Whole Asset</strong></td>
+<td>asset — every low, main group and sub-groups alike</td>
+<td>one non-overlapping UV layout across all the asset's lows</td>
+</tr>
+<tr>
+<td><strong>Per Part</strong></td>
+<td>part container under the asset — Body, Head, each limb</td>
+<td>nothing extra; lows directly under the asset get the asset material</td>
+</tr>
+<tr>
+<td><strong>Shared</strong></td>
+<td><em>everything you tag</em>, under one name you type</td>
+<td>one non-overlapping UV layout across every asset you tag</td>
+</tr>
+</tbody>
+</table>
+<p>Shared is the atlas / trim sheet / modular kit case: one set spanning separate
+asset collections. It is the one mode with no asset name to borrow, so it asks
+for one. Assets can be tagged one at a time or all at once — they land on the
+same material either way. Shared is offered by the High/Low Manager; the
+Baker's standalone version does Whole Asset and Per Part.</p>
+<p>Lows outside any collection use their own base name — <code>Crate_low</code> → <code>Crate</code>.</p>
+<p>Two things read these materials:</p>
+<p><strong>Detect Lows by Material</strong> tells the Baker to identify lows by these
+materials instead of by <code>_low</code>/<code>_high</code> collections. Each material is a set,
+and every low carrying it bakes into that one set.</p>
+<p><strong>Combine Asset</strong> is the other way to get one set per asset, without
+materials: it bakes all of an asset's sub-groups into one set named after the
+asset. The two are alternatives, which is why Combine is only offered while
+Detect Lows by Material is off.</p>
+<p>UDIM is orthogonal to all of this. A texture set decides <em>which maps</em>; UDIM
+decides <em>how many tiles</em> each of those maps is written across. Per Part with
+UDIM gives you tiled maps per part.</p>
+<hr />
+<h2 id="maps">Maps<a class="headerlink" href="#maps" title="Permanent link">&para;</a></h2>
+<p><img alt="Maps" src="../screenshots/baker/09-ui_maps.png" /></p>
+<p><strong>All</strong> and <strong>None</strong> tick everything at once. A common pattern is <em>None</em>,
+Normal only for fast iteration, then <em>All</em> for the final pass. Each map bakes
+to <code>{base}_{maptype}.png</code>.</p>
+<p>Most maps are ray-traced from the high. Two are not: <strong>Edges</strong> and
+<strong>Wireframe</strong> are drawn from the low's UV layout alone, so they cost almost
+nothing and are skipped by denoise and edge protection — both would smear the
+crisp lines they are made of.</p>
+<p>Tuning controls appear only once a map is ticked, so the section stays short.
+The <strong>gear</strong> beside a map opens its settings popover:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Normal" src="../screenshots/popups/popover-ROBSBAKER_PT_opt_normal.png" /></td>
+<td><img alt="AO" src="../screenshots/popups/popover-ROBSBAKER_PT_opt_ao.png" /></td>
+<td><img alt="Bent Normals" src="../screenshots/popups/popover-ROBSBAKER_PT_opt_bent.png" /></td>
+</tr>
+<tr>
+<td><img alt="Curvature" src="../screenshots/popups/popover-ROBSBAKER_PT_opt_curvature.png" /></td>
+<td><img alt="Cavity" src="../screenshots/popups/popover-ROBSBAKER_PT_opt_cavity.png" /></td>
+<td><img alt="Convexity" src="../screenshots/popups/popover-ROBSBAKER_PT_opt_convexity.png" /></td>
+</tr>
+<tr>
+<td><img alt="Thickness" src="../screenshots/popups/popover-ROBSBAKER_PT_opt_thickness.png" /></td>
+<td><img alt="Height Surface" src="../screenshots/popups/popover-ROBSBAKER_PT_opt_heightface.png" /></td>
+<td><img alt="Vertex Color" src="../screenshots/popups/popover-ROBSBAKER_PT_opt_vertexcolor.png" /></td>
+</tr>
+<tr>
+<td><img alt="Edges" src="../screenshots/popups/popover-ROBSBAKER_PT_opt_edges.png" /></td>
+<td><img alt="Wireframe" src="../screenshots/popups/popover-ROBSBAKER_PT_opt_wireframe.png" /></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Map</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Normal</strong></td>
+<td>Tangent-space. <strong>Format</strong> selects OpenGL (Y+, Blender and most engines) or DirectX (Y−, Unreal and some others)</td>
+</tr>
+<tr>
+<td><strong>Object Normal</strong></td>
+<td>World/object-space normals</td>
+</tr>
+<tr>
+<td><strong>Ambient Occlusion</strong></td>
+<td>Sample-count sensitive; see AO Distance below</td>
+</tr>
+<tr>
+<td><strong>Bent Normal / (Obj)</strong></td>
+<td>Average unoccluded direction. On the <strong>native tracer</strong> it is nearly free — the average of the AO rays that escaped, out of the same hemisphere AO already fired. On <strong>Cycles</strong> it has no native pass and is reconstructed from six directional AO passes per map, making it the most expensive option there. Honours painted skew. Its <strong>Search Distance</strong> is its own, 0 = unlimited by default — not AO's: the geometry that bends it is often far off</td>
+</tr>
+<tr>
+<td><strong>Curvature</strong></td>
+<td><strong>Source</strong>: <em>From Normal Map</em> (derived from the baked normal — picks up the bevel shader and skew painting; the Marmoset/Painter way) or <em>Pointiness</em> (vertex-based; on a very dense high every vertex is nearly flat, so it reads faint). <strong>Radius</strong> is in texels at 2K and scales with the bake, so 1 is 4 texels at 8K and the map looks the same at any size</td>
+</tr>
+<tr>
+<td><strong>Thickness</strong></td>
+<td>Ray-traced interior distance; scene-scale dependent. <strong>Open Backs Read Thin</strong> (native, on by default): a surface with nothing behind it — a single-sided panel, a terrain tile — reads white rather than black, as Toolbag reads it</td>
+</tr>
+<tr>
+<td><strong>Height</strong></td>
+<td>Distance from low to high mapped over <em>Height Range</em>: the high sitting Range/2 above the low bakes white, Range/2 below bakes black</td>
+</tr>
+<tr>
+<td><strong>Height (Surface)</strong></td>
+<td>True displacement-style height along the low's normal per texel; 0.5 grey = on the surface</td>
+</tr>
+<tr>
+<td><strong>Position</strong></td>
+<td>World position gradient</td>
+</tr>
+<tr>
+<td><strong>Material ID</strong></td>
+<td>Flat ID colours; with the Material ID Setter installed, your library's exact ID colours are used</td>
+</tr>
+<tr>
+<td><strong>Diffuse</strong></td>
+<td>Base Colour from the high's Principled materials — unaffected by metallic, unlike the raw Cycles diffuse pass which bakes metals black</td>
+</tr>
+<tr>
+<td><strong>Roughness / Gloss</strong></td>
+<td>Gloss is inverted roughness</td>
+</tr>
+<tr>
+<td><strong>Metallic</strong></td>
+<td>From the high's Principled materials</td>
+</tr>
+<tr>
+<td><strong>Emissive</strong></td>
+<td>Emission Colour <strong>times</strong> Emission Strength — what the surface actually emits. A material left at Blender's default (white, zero strength) bakes <strong>black</strong>, not white</td>
+</tr>
+<tr>
+<td><strong>Transparency</strong></td>
+<td>Alpha; white = opaque</td>
+</tr>
+<tr>
+<td><strong>Cavity / Convexity</strong></td>
+<td><strong>Source</strong>: <em>From Normal Map</em> (crisp, picks up the bevel shader; the Painter way) or <em>Short AO</em> (geometry-only, softer, for broad crevice dirt)</td>
+</tr>
+<tr>
+<td><strong>Vertex Color</strong></td>
+<td>The mesh's colour attribute. Blank means each high's active attribute</td>
+</tr>
+<tr>
+<td><strong>Edges</strong></td>
+<td>The edge-protection mask itself: white where cleanup applies. Follows Edge Protection's settings, so it shows exactly what the baker did — useful as a hard-edge mask in Painter. Works whether or not protection is on</td>
+</tr>
+<tr>
+<td><strong>Wireframe</strong></td>
+<td>The low's topology in UV space, every polygon edge as an antialiased line. A UV-seam edge appears twice by design: across a seam the two faces genuinely sit in different places</td>
+</tr>
+</tbody>
+</table>
+<h3 id="presets">Presets<a class="headerlink" href="#presets" title="Permanent link">&para;</a></h3>
+<p><img alt="Map presets" src="../screenshots/popups/menu-ROBSBAKER_MT_map_presets.png" /></p>
+<p>Save the current map selection as a preset and recall it later. The count
+beside each name is how many maps it turns on.</p>
+<hr />
+<h2 id="ao-distance-cavity-weight-and-distance-falloff">AO Distance, Cavity Weight and Distance Falloff<a class="headerlink" href="#ao-distance-cavity-weight-and-distance-falloff" title="Permanent link">&para;</a></h2>
+<p>AO Distance and Distance Falloff work as a pair, and on a large or enclosed
+asset they are the difference between a usable AO map and a black one.</p>
+<p><strong>AO Distance</strong> is how far an AO ray may travel before it counts as escaped.
+It is the World's own setting — the same value Cycles' AO bake reads — and the
+field overrides it for the duration of the bake.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Leaving the field at 0 does <strong>not</strong> mean unlimited. It means <em>leave the
+World alone</em>, and Blender ships the World at 10 units. Set it to roughly
+the depth of the recess you want read.</p>
+</div>
+<p><strong>Cavity Weight</strong> (native backend only) is Marmoset Toolbag's control, with
+the same numbers: it decides how much rays fired at a grazing angle count
+against rays fired straight out. <strong>-1</strong> is ordinary AO and the default; <strong>0</strong>
+weighs every direction evenly; higher values count grazing rays for more, and
+those are the rays that find the walls of a cavity, so creases darken. It
+needs no distance and costs no extra rays.</p>
+<p><strong>Distance Falloff</strong> (native backend only) decides how much an occluder's
+<em>distance</em> counts against the surface, rather than just the fact that it is
+there.</p>
+<p>Ordinary AO counts a hit as one whether the blocker is a millimetre away or at
+the far end of the search. So inside a closed volume — a chest, a helmet, a
+barrel — nearly every ray reaches the opposite wall, every texel reads fully
+occluded, and the interior bakes flat black with its detail buried.</p>
+<p>Above 0, distant occluders give up some of their shadow while near ones keep
+all of theirs: enclosed volumes open up and crevices stay dark. Below 0 it is
+the other way round. 0 is ordinary AO, and it costs no extra rays either way,
+because it reweights the rays AO already fires.</p>
+<p>It needs a <strong>finite</strong> AO Distance, because that distance is the scale each hit
+is measured against. With an unlimited search there is nothing to measure
+closeness against, so the control greys out rather than applying a flat
+darkening that is not a cavity effect at all.</p>
+<p>Cycles has no equivalent of either: its AO node answers a hit fraction and
+never exposes how far or in which direction each ray went.</p>
+<h3 id="matching-a-marmoset-toolbag-bake">Matching a Marmoset Toolbag bake<a class="headerlink" href="#matching-a-marmoset-toolbag-bake" title="Permanent link">&para;</a></h3>
+<p>Measured against an 8K Toolbag bake of the same asset:</p>
+<ul>
+<li><strong>Search Distance</strong> is in centimetres in Toolbag: its 25 is an <strong>AO
+  Distance</strong> of 0.25 m here.</li>
+<li><strong>Cavity Weight</strong> takes the same value.</li>
+<li><strong>Thickness Scale</strong> is a share of the model's bounds in Toolbag; on a
+  statue 11 m tall, its 0.1 matched a <strong>Distance</strong> of 0.8 m.</li>
+<li><strong>Curvature</strong>: <em>From Normal Map</em> at Radius 1 and Strength 1.4.</li>
+<li><strong>Bent normals</strong> search far in Toolbag; leave their Search Distance at 0
+  (unlimited) even with a short AO distance.</li>
+<li><strong>Padding</strong>: Toolbag fills the space between islands; <strong>Fill</strong> does the
+  same.</li>
+</ul>
+<hr />
+<h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
+<p><img alt="Advanced" src="../screenshots/baker/04-ui_advanced.png" /></p>
+<h3 id="native-tracer">Native Tracer<a class="headerlink" href="#native-tracer" title="Permanent link">&para;</a></h3>
+<p><img alt="Native Tracer" src="../screenshots/baker/03-ui_advanced--ui_adv_tracer.png" /></p>
+<p>Every ray-traced map can be traced by a bundled native tracer instead of
+Cycles, which on a heavy asset is the difference between minutes and seconds.
+It is on by default and falls back to Cycles wherever it is not available, so
+nothing changes for you except the wait.</p>
+<p>The tracer is also what reads the painted offset map per texel, and what makes
+Bent Normals and Ignore Backfaces work at all.</p>
+<p>During a bake, any viewport in Rendered or Material Preview switches to Solid,
+and image textures leave the GPU, so the bake gets the graphics card's memory.
+Everything switches back when the bake finishes or is stopped. If the GPU is
+still full, the tracer tries again once before falling back to the CPU - and
+the next bake tries the GPU again, rather than staying on the CPU.</p>
+<h3 id="prepare">Prepare<a class="headerlink" href="#prepare" title="Permanent link">&para;</a></h3>
+<p>Under the Bake button, <strong>Prepare</strong> loads the high poly into the tracer ahead
+of the bake. It lights up - <strong>Prepared · 13.6 GB</strong> - once the tracer holds
+the high poly this bake will use, so you can see it is ready; press it again
+to unload it and free the memory. It is optional: Bake prepares by itself.</p>
+<p>Live painting uses the same prepared tracer. Live's own Prepare loads the same
+high poly as this one - the whole asset on a merged bake - and a paint session
+on just one part of it reuses that tracer by hiding the other parts, rather
+than rebuilding it for the part and again for the next bake.</p>
+<p>A live session starts from your last bake. If nothing has changed since - the
+same high and low poly, cage, settings and painted skew/offset - the preview
+shows the baked maps at once instead of tracing the whole map again. Each
+stroke then traces only the patch you painted (plus a margin for the
+denoise and edge protection) and lands it on the preview, so an 8K map
+updates in a fraction of a second. Without a bake to start from, the panel
+says so - <strong>Bake once first</strong> - and the first pass traces the whole map.
+Changing a setting the preview depends on, such as AO's Cavity Weight or
+Distance, re-traces the whole map.</p>
+<h3 id="high-poly-cache">High Poly Cache<a class="headerlink" href="#high-poly-cache" title="Permanent link">&para;</a></h3>
+<p>Before the tracer can bake, the Baker prepares the high poly for it, and on a
+heavy asset that is most of a cold start - 87 of 112 seconds on a
+78-million-triangle asset. The tracer stays loaded between bakes so that only
+happens once, but unloading it, or restarting Blender, used to mean preparing
+it all again.</p>
+<p><strong>Store</strong> keeps the prepared high poly beside the <code>.blend</code>, in Blender's own
+cache folder: <code>blendcache_&lt;file&gt;/robtrace/</code>. A cold start then loads it instead
+of preparing again. Store prepares the selected low's high poly straight away;
+anything else is stored the first time it bakes. The <code>.blend</code> must be saved
+first, and the cache takes room on that drive - about 7 GB for a
+78-million-triangle asset.</p>
+<p>Edit a high and the panel says <strong>Cache is outdated</strong>, naming the high; the next
+bake prepares and stores it again. Edits are tracked while the file is open, and
+after reopening, the first cold start checks each high against what was stored
+(a few seconds, against minutes of preparing) before trusting it. Changing only
+the low never makes the cache outdated.</p>
+<p><strong>Clear</strong> deletes the stored copy and stops keeping one for this file. Your
+high-poly meshes are not touched.</p>
+<p>Shader bevels bake on the tracer from each material's Bevel radius. A radius
+driven by other nodes cannot be read and is left unbevelled - with one
+exception: R.O.B Material ID Setter's <strong>blended bevels</strong> (radius = width +
+<code>MatID_BevelDelta</code>), whose per-corner offsets ride with the scene, so the
+width eases across ID boundaries on the tracer exactly as it does in Cycles.</p>
+<p>The same high bakes the same way onto any low, whatever its size or UV layout:</p>
+<ul>
+<li><strong>Search depth follows the cage.</strong> A ray looks up to 16 times its cage
+  distance past the low's surface. It used to be the low's whole size, so a
+  big low reached deep detail a small one never saw. <strong>Max Depth</strong>, under the
+  cage offset in the Cage section, overrides it: Auto (0) is the 16x rule, a
+  distance fixes it - shorter keeps rays out of deep holes, longer reaches
+  sunken detail.</li>
+<li><strong>Flat faces fire straight.</strong> On a flat area of the low, rays go straight
+  in rather than leaning with the cage's averaged corners, blending back to
+  the cage near the area's edges. Curved areas are unchanged.</li>
+<li><strong>Misses are not smeared.</strong> A texel whose ray hits nothing keeps the
+  "nothing hit" value (flat normal, black AO) instead of being padded with
+  its neighbours' colours.</li>
+</ul>
+<h3 id="cycles-passes-only">Cycles passes only<a class="headerlink" href="#cycles-passes-only" title="Permanent link">&para;</a></h3>
+<p><img alt="Cycles passes" src="../screenshots/baker/01-ui_advanced--ui_adv_cycles.png" /></p>
+<p><strong>GPU Bake</strong> asks <strong>Cycles</strong> to render on the card, using the compute device
+from Preferences and falling back to CPU.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There are two GPU switches in this add-on and they are unrelated. This one
+is Cycles'. The tracer's own device is <strong>Bake Device</strong>, in the Native
+Tracer block. Ticking this one and expecting the tracer to use your card
+gets you nothing.</p>
+</div>
+<p><strong>OptiX Fix (bake via CUDA)</strong>, on by default: Blender's OptiX backend reloads
+its shader-raytracing kernel — required by the Bevel and AO nodes — on every
+bake call, an upstream issue that can turn a 45-second bake into an hour when
+many maps are baked. With preferences set to OptiX, the add-on temporarily
+bakes on CUDA and restores OptiX afterwards. Output is identical; only the
+wasted time disappears. Leave it on.</p>
+<h3 id="geometry-preparation">Geometry preparation<a class="headerlink" href="#geometry-preparation" title="Permanent link">&para;</a></h3>
+<p><img alt="Geometry preparation" src="../screenshots/baker/02-ui_advanced--ui_adv_geo.png" /></p>
+<p><strong>Prepare High Poly</strong> flattens the editable highs into a bake-ready form and
+writes the originals out to a backup file, so nothing is destroyed.</p>
+<p><img alt="Prepare High Poly" src="../screenshots/dialogs/dialog-robsbaker.prepare_highs.png" /></p>
+<p><strong>Restore High Poly</strong> brings them back.</p>
+<p><img alt="Restore Prepared Highs" src="../screenshots/dialogs/dialog-robsbaker.restore_highs.png" /></p>
+<p>Also here: applying modifiers to the lows, joining highs per group, and baking
+from applied copies.</p>
+<hr />
+<h2 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">&para;</a></h2>
+<p><img alt="Logs" src="../screenshots/baker/09-logs.png" /></p>
+<p>What the last bake did, without opening the console:</p>
+<ul>
+<li>the result — Finished, Stopped or Failed — and the total time</li>
+<li>the time each map took (time spent paused is not counted)</li>
+<li>which maps went to the tracer and which to Cycles</li>
+<li>the tracer binary: platform, the protocol it answered with, build date</li>
+<li>every warning and error</li>
+</ul>
+<p>Below that is the full log, with <strong>Save Log to File</strong> and <strong>Clear</strong>.
+<strong>Copy Report</strong> puts the summary and the whole diagnostic report — Blender,
+OS, tracer and settings included — on the clipboard as plain text, ready to
+paste into a bug report. It holds file paths from your machine, so read it
+before posting it anywhere public.</p>
+<p>The summary describes this session's last bake; it is not saved with the file.</p>
+<hr />
+<h2 id="preview">Preview<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
+<p>Baked maps are shown on the low's own mesh — no duplicate object is created,
+so a preview can never occlude a bake.</p>
+<p>The preview views sit in the strip under Offline / Live, on every tab:
+<strong>All Meshes</strong> sets the scope (the selected set, or every set in the file),
+<strong>Normal + AO</strong> and <strong>Full PBR</strong> put the baked maps on the model, <strong>Edge Mask</strong>
+shows what Edge Protection will protect, and <strong>Done</strong> takes the preview off.
+Pressing a view again re-applies it rather than clearing. Each map's own
+<strong>Preview</strong> button in the Maps tab shows that map alone. <strong>Full PBR</strong> assembles
+the baked set into one shaded material.
+Original materials are snapshotted and restored by <strong>Done</strong>, by any paint
+panel's Done, or automatically the moment a bake starts.</p>
+<p><strong>Preview After Bake</strong>, on by default, applies the fresh Normal + AO to every
+baked low — including in merged mode, where it lands on your real lows and not
+the temporary merge objects.</p>
+<hr />
+<h2 id="if-something-looks-wrong">If something looks wrong<a class="headerlink" href="#if-something-looks-wrong" title="Permanent link">&para;</a></h2>
+<p><strong>The interior of a closed object has the outside projected onto it.</strong> The
+cage is reaching too far. Set that group's <strong>Max</strong> offset near the real gap —
+see <a href="#painted-offset-and-the-minmax-range">the Min/Max range</a>. Unpainted grey
+means <em>Cage Offset</em>, so a Max of 1 m with no paint is a metre of reach.</p>
+<p><strong>AO is flat black inside an enclosed volume.</strong> Set a finite <strong>AO Distance</strong>,
+then raise <strong>Distance Falloff</strong> above 0.</p>
+<p><strong>Emissive baked black.</strong> Blender's default material is white at zero
+strength, and the map is colour times strength. Give it a strength.</p>
+<p><strong>Ignore Backfaces did nothing.</strong> You are on Cycles. It is native-only.</p>
+<p><strong>Bent Normals are crawling.</strong> On Cycles they are six AO passes per map.
+Switch to the native tracer.</p>
+<p><strong>Groups are shadowing each other.</strong> Turn on <strong>Ignore Groups</strong> (Quality).</p>
+<p><strong>The bake stalls before it starts.</strong> Check you are on <strong>Offline</strong>, not Live.</p>
+<p><strong>Maps are blank on the last few groups.</strong> Fixed — generated canvases were
+being evicted from Blender's image cache. If you see it, the version is old.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © Robert Allsopp
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "toc.follow", "search.suggest", "search.highlight", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

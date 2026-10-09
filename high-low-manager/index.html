@@ -1,0 +1,1646 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Manuals for the R.O.B Tools Blender add-on suite">
+      
+      
+        <meta name="author" content="Robert Allsopp">
+      
+      
+        <link rel="canonical" href="https://newdeal666.github.io/rob-tools-manual/high-low-manager/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../baker/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>High/Low Manager - R.O.B Tools</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#highlow-manager" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="R.O.B Tools" class="md-header__button md-logo" aria-label="R.O.B Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            R.O.B Tools
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              High/Low Manager
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to dark"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to light"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="R.O.B Tools" class="md-nav__button md-logo" aria-label="R.O.B Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    R.O.B Tools
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manuals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manuals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High/Low Manager
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High/Low Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-panel-is-laid-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the panel is laid out
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How the panel is laid out">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-did-my-mesh-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where did my mesh go?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-outliner-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The outliner folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#highlow-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High/Low tab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="High/Low tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-asset-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The asset list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploded-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploded View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bake-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bake Materials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-your-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apply Your Shader
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final tab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Final tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-to-asset-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Send to Asset Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lod-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOD tab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shards-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shards tab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Folders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-floating-popup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The floating popup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dialogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dialogs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-something-looks-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If something looks wrong
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R.O.B Baker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material-id-setter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material ID Setter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R.O.B Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preferences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screenshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screenshots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-panel-is-laid-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the panel is laid out
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How the panel is laid out">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-did-my-mesh-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where did my mesh go?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-outliner-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The outliner folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#highlow-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High/Low tab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="High/Low tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-asset-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The asset list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploded-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploded View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bake-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bake Materials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-your-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apply Your Shader
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final tab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Final tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-to-asset-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Send to Asset Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lod-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOD tab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shards-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shards tab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Folders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-floating-popup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The floating popup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dialogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dialogs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-something-looks-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If something looks wrong
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="highlow-manager">High/Low Manager<a class="headerlink" href="#highlow-manager" title="Permanent link">&para;</a></h1>
+<p>Organises a bake asset into high/low collection pairs, keeps the copies that
+ship separate from the meshes you bake, and exports both.</p>
+<p>It lives in the 3D viewport sidebar (<strong>N</strong>) under the <strong>R.O.B Tools</strong> tab.
+Pick <strong>HL</strong> in the suite switcher at the top.</p>
+<p><img alt="The panel with every section closed" src="../screenshots/high-low-manager/00-overview.png" /></p>
+<hr />
+<h2 id="how-the-panel-is-laid-out">How the panel is laid out<a class="headerlink" href="#how-the-panel-is-laid-out" title="Permanent link">&para;</a></h2>
+<p>Four tabs, and one block pinned underneath them.</p>
+<table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High/Low</strong></td>
+<td>The bake meshes: assets, groups, exploded view, bake materials</td>
+</tr>
+<tr>
+<td><strong>Final</strong></td>
+<td>The editable copies that ship, and their engine settings</td>
+</tr>
+<tr>
+<td><strong>LOD</strong></td>
+<td>Level-of-detail ladders built from the Final copies</td>
+</tr>
+<tr>
+<td><strong>Shards</strong></td>
+<td>Destructibles — the pieces a Final mesh breaks into</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Project Folders</strong> and <strong>Export</strong> sit below the tabs rather than inside one,
+because every tab writes through them.</p>
+<p>The tab decides what the <em>panel</em> shows. The eye on a section header decides
+what the <em>viewport</em> shows.</p>
+<h3 id="where-did-my-mesh-go">Where did my mesh go?<a class="headerlink" href="#where-did-my-mesh-go" title="Permanent link">&para;</a></h3>
+<p>Opening <strong>Final</strong>, <strong>LOD</strong> or <strong>Shards</strong> hands the viewport to that panel: its
+meshes go on screen and <strong>the high/low bake collections are hidden</strong>.</p>
+<p>That is deliberate. The Game copy, the LOD levels and the shards all sit in
+the same place in space as the bake meshes, so a mix of them on screen tells
+you nothing about which one you are actually working on — and it is the reason
+you cannot accidentally edit a bake mesh while you think you are editing the
+copy that ships.</p>
+<p>Nothing has been deleted, and nothing about your own visibility choices has
+been changed. The focus is composed on top of your asset eyes rather than
+written into them, so whatever you had hidden or soloed is still hidden or
+soloed when you come back to the High/Low tab.</p>
+<p>To get everything back on screen at once, use <strong>Show Everything</strong>. Opening the
+High/Low section again also releases the viewport.</p>
+<p>The eye on any section header does this on demand — <em>Show Only This Panel's
+Meshes</em> — for when you want the LOD levels on screen while reading a different
+section.</p>
+<p>Two extras worth knowing: focusing Shards also switches every asset to
+<strong>Broken</strong>, and focusing Final switches them to <strong>Whole</strong>, so you are not
+shown the state the panel is not about. The switch still works normally once
+you are in there.</p>
+<p>If you would rather control visibility only with the buttons, turn off
+<strong>Panel decides what is on screen</strong> in the add-on preferences.</p>
+<h3 id="the-outliner-folders">The outliner folders<a class="headerlink" href="#the-outliner-folders" title="Permanent link">&para;</a></h3>
+<p>The outliner is split the same way as the tabs. The bake assets go in a
+<strong>High/Low</strong> folder, the Game copies in <strong>Final</strong>, the LOD sets in <strong>LOD</strong> and
+the shards in <strong>Shards</strong>. New collections go straight into their folder, and
+older files are tidied when opened. A collection you placed somewhere yourself
+is left alone. Turn off <strong>File collections into … folders</strong> in the add-on
+preferences to keep everything loose at the top.</p>
+<hr />
+<h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
+<p><strong>Asset</strong> — a parent collection holding a high/low pair:</p>
+<div class="highlight"><pre><span></span><code>ROB
+├── ROB_high
+└── ROB_low
+</code></pre></div>
+<p>Any collection with children ending <code>_high</code> and <code>_low</code> is picked up, so
+structures you built by hand appear too.</p>
+<p><strong>Group</strong> — an extra high/low pair inside the asset, for a part that needs its
+own bake:</p>
+<div class="highlight"><pre><span></span><code>ROB
+├── ROB_high              ← the unnamed pair, shown as "main"
+├── ROB_low
+├── ROB_Head_high         ← group "Head"
+└── ROB_Head_low
+</code></pre></div>
+<p><strong>Cluster</strong> — groups are filed under their <strong>first word</strong>. <code>Body Elements</code>,
+<code>Body Oven</code> and <code>Body OvenDoor</code> collapse under one <strong>Body</strong> row with its own
+eye and solo. This is how an asset with thirty groups stays readable. A group
+whose name is a single word (<code>Head</code>) draws as a flat row instead.</p>
+<p><strong>Not Baked</strong> — containers inside the asset that the Baker ignores: lights,
+guide empties, mirror points, Boolean donors, Data Transfer shells.</p>
+<hr />
+<h2 id="highlow-tab">High/Low tab<a class="headerlink" href="#highlow-tab" title="Permanent link">&para;</a></h2>
+<h3 id="new-asset">New Asset<a class="headerlink" href="#new-asset" title="Permanent link">&para;</a></h3>
+<p><img alt="New Asset open" src="../screenshots/high-low-manager/12-robhl_new_asset_open.png" /></p>
+<p>Closed, the header carries the whole job: type a name, press the collection
+button. <strong>Create</strong> greys out on an empty name rather than making an asset
+called "asset".</p>
+<p>Open it for <strong>Auto Suffix</strong> and <strong>Rename meshes to group</strong>.</p>
+<p>While the project has no export root, a prompt appears here with <strong>Use .blend
+Folders</strong> and a path field. It is shown until the project has a root and never
+again — a project used to begin with every path blank and nothing saying so
+until the first export failed.</p>
+<h3 id="the-asset-list">The asset list<a class="headerlink" href="#the-asset-list" title="Permanent link">&para;</a></h3>
+<p><img alt="High / Low Manager section" src="../screenshots/high-low-manager/02-rob_hl_show_collections.png" /></p>
+<p>Above the list: <strong>Refresh Tri Counts</strong>, then hide-all and show-all.</p>
+<p><strong>Asset header row</strong> — expand arrow, eye, solo, the export checkbox, the
+collection colour, the name, the tri summary, and delete on the far right. The
+tri summary is a button: press it to recount just that asset. Delete sits well
+away from the eye on purpose.</p>
+<p>An asset that is hidden or unchecked collapses to its header line.</p>
+<p><strong>Visibility row</strong> — <strong>Both / High / Low</strong>, the live one depressed. With the
+Baker installed and the asset caged, a cage button joins them.</p>
+<p><strong>Groups box</strong> — <strong>Add Group</strong>, then organise, normalise names, and clean up
+empties. Each group row carries visibility, solo, its name, and rename/delete.
+Cluster headers collapse their parts.</p>
+<p><strong>Not Baked</strong> sits at the bottom of the groups box, under its own rule, so it
+can never read as a bake group.</p>
+<p><img alt="Not Baked open" src="../screenshots/high-low-manager/13-rob_hl_show_collections--robhl_no_bake_open.png" /></p>
+<p><strong>Gather Guides &amp; Lights</strong> sweeps the asset's lights and empties into
+containers. Each container row has an eye, select, move-selected and delete.</p>
+<p><strong>Explode</strong> — a toggle: blue while exploded, press again to put everything back. See Exploded View below.</p>
+<p><strong>Export row</strong> — <strong>High</strong>, <strong>Low</strong>, <strong>Painter</strong>, <strong>Marmoset</strong> for this asset
+alone. High exports without tangents, Low with them, Marmoset writes a
+per-group FBX set plus <code>&lt;asset&gt;_bake.json</code>.</p>
+<p><strong>Stamp IDs on Selected</strong> appears when the Material ID Setter is installed. A
+Marmoset bake set carries its ID colours across in a <code>MatID</code> vertex-colour
+attribute, because that is what survives FBX; Toolbag then bakes a Vertex
+Color map and its Color Selection masks read it. Nothing selected means all.</p>
+<p><strong>Bake Materials row</strong> — the texture-set mode and <strong>Bake Materials</strong> for this
+asset, with an X to clear.</p>
+<h3 id="exploded-view">Exploded View<a class="headerlink" href="#exploded-view" title="Permanent link">&para;</a></h3>
+<p><img alt="Exploded View" src="../screenshots/high-low-manager/05-robhl_explode_open.png" /></p>
+<p>Moves groups apart along an axis so each can be seen and baked on its own. The
+meshes are not modified, and pressing <strong>Explode</strong> again puts them back.</p>
+<p>Groups spread along one axis; sub-parts stack along another. A sub-part is
+the words after the first, so <code>Right Elbow</code> stacks under <code>Right</code>.</p>
+<p>This is not the Shards tab. Exploded view separates parts; Shards breaks a
+mesh into pieces.</p>
+<h3 id="bake-materials">Bake Materials<a class="headerlink" href="#bake-materials" title="Permanent link">&para;</a></h3>
+<p><img alt="Bake Materials" src="../screenshots/high-low-manager/06-robhl_export_bake_open.png" /></p>
+<p>Creates the texture-set materials on the lows. The material name <em>is</em> the
+texture set, cleaned of any <code>_low</code>, so it is also the Painter set name and the
+baked file name. With the Baker enabled it also switches the Baker to Detect
+Lows by Material.</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>One set per</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Whole Asset</strong></td>
+<td>asset — every low, main group and sub-groups alike</td>
+</tr>
+<tr>
+<td><strong>Per Part</strong></td>
+<td>part container under the asset: Body, Head, each limb</td>
+</tr>
+<tr>
+<td><strong>Shared</strong></td>
+<td>everything you tag, under one name you type</td>
+</tr>
+</tbody>
+</table>
+<p>Whole Asset and Shared both need one non-overlapping UV layout across
+everything in the set. Shared is the atlas, trim sheet or modular kit case —
+one set spanning separate asset collections — and is the one mode with no
+asset name to borrow, so it asks for one.</p>
+<p>The Baker's side of this is written up under
+<a href="../baker/#texture-sets">Texture sets</a>.</p>
+<p><img alt="UDIM Sets" src="../screenshots/high-low-manager/16-robhl_export_bake_open--robhl_udim_open.png" /></p>
+<p><strong>UDIM Sets</strong> builds the tiled images: resolution, fill, non-colour and assign.</p>
+<h3 id="apply-your-shader">Apply Your Shader<a class="headerlink" href="#apply-your-shader" title="Permanent link">&para;</a></h3>
+<p><img alt="Apply Your Shader" src="../screenshots/high-low-manager/14-robhl_shader_open.png" /></p>
+<p>Builds a preview material from baked maps. Pick a template, or <strong>Import</strong> to
+bring one in on a new project. Maps are matched by each Image node's picture
+or its label, and read from the texture folder in Project Folders.</p>
+<p>It goes on Game, LOD and shard meshes only — never on the bake meshes.</p>
+<hr />
+<h2 id="final-tab">Final tab<a class="headerlink" href="#final-tab" title="Permanent link">&para;</a></h2>
+<p><img alt="Final / Editable Lows" src="../screenshots/high-low-manager/03-rob_hl_show_game.png" /></p>
+<p>The editable copies that ship. <strong>Copy Lows to Game</strong> duplicates the asset's
+lows into a <code>&lt;asset&gt; Game</code> collection you can edit freely — rename, delete,
+make variants — without touching the bake setup. Copies keep their texture-set
+materials, and re-running adds only lows that have no copy yet.</p>
+<p>Each row carries eye, solo, an optional lock, the mesh count, an LOD marker
+when levels exist, and the actions menu.</p>
+<p><img alt="Final Actions menu" src="../screenshots/popups/menu-ROBHL_MT_final_actions.png" /></p>
+<p><strong>Has LOD Levels</strong> filters the asset out of this tab once it is managed in LOD.</p>
+<p><strong>Apply Your Shader</strong> is here as well as on the High/Low tab, because what it
+writes to is the Final, LOD and shard meshes. Each asset's ▾ menu has <strong>Apply
+Shader + Textures</strong> for that asset alone.</p>
+<h3 id="send-to-asset-library">Send to Asset Library<a class="headerlink" href="#send-to-asset-library" title="Permanent link">&para;</a></h3>
+<p>Writes a finished asset to its own <code>.blend</code> in one of your asset libraries
+(Preferences &gt; File Paths), ready to drag into a level. The thumbnail is
+rendered the way Material Preview shows it, with your textures and the same
+HDRI.
+Pick the <strong>Library</strong> and an optional <strong>Catalog</strong> (for example
+<code>Props/Furniture</code>). The catalog is also the folder the file goes in, and the
+line under them shows that folder. Left empty, they use the <strong>Default
+Library</strong> and <strong>Default Catalog</strong> set in the add-on's preferences.
+<strong>Send All Checked to Library</strong> sends every
+checked asset, and each asset's ▾ menu sends just that one.</p>
+<ul>
+<li>LOD0 is what shows, the same mesh the engine export ships. Without LODs,
+  the Final meshes show instead. LOD1 and below go in a hidden
+  <code>&lt;name&gt; LODs</code> collection, and collision meshes in a hidden
+  <code>&lt;name&gt; Collision</code>.</li>
+<li>Dropped in, it stands on the 3D cursor.</li>
+<li>Sending again overwrites the file. Your working file is left as it was.</li>
+<li>Texture paths are written absolute. An image that was never saved to disk
+  can't come along, and the report names it.</li>
+</ul>
+<p><img alt="Export Settings" src="../screenshots/high-low-manager/10-rob_hl_show_game--robhl_game_settings_open.png" /></p>
+<p>Engine choice (Unity / Unreal / Godot), the name prefix, and the export
+settings. The folder lives in Project Folders — two fields bound to one
+setting in two sections is a question with two answers on screen at once.</p>
+<hr />
+<h2 id="lod-tab">LOD tab<a class="headerlink" href="#lod-tab" title="Permanent link">&para;</a></h2>
+<p><img alt="LOD" src="../screenshots/high-low-manager/04-rob_hl_show_lod.png" /></p>
+<p>LOD0 is the Game copy itself — the thing that ships and that you carry on
+editing. So the section is empty until the copies exist and says which step is
+missing rather than drawing an empty box.</p>
+<ul>
+<li>No Game copies yet → <strong>Copy Lows to Game</strong></li>
+<li>Game copies but no LOD0 → <strong>Copy Game to LOD0</strong></li>
+<li>A collection that was never baked → <strong>Add Collection</strong>, then <strong>Copy Meshes
+  to LOD0</strong></li>
+</ul>
+<p><img alt="Build Ladder" src="../screenshots/dialogs/dialog-robhl.lod_ladder.png" /></p>
+<p><strong>Build Ladder</strong> creates LOD1-3 as decimate levels from a preset. LOD0 is left
+as it is.</p>
+<p>The dropdown beside <strong>Export for Engine</strong> picks how the levels ship:</p>
+<ul>
+<li><strong>One File (LOD Set)</strong>: every level in one file, which is what Unity's
+  LODGroup and Unreal's LOD import read.</li>
+<li><strong>One File per LOD</strong>: <code>SM_Chair_LOD0.fbx</code>, <code>SM_Chair_LOD1.fbx</code> and so on,
+  one per level. The levels share one origin, so they still line up.</li>
+</ul>
+<p>The same choice is in Export Settings and under <strong>Final + LODs</strong> in Export.</p>
+<p>The asset's eye (in Final, and on its row here) hides its Game copy and all of
+its LOD levels together. A level eye, Solo or isolate opens it again.</p>
+<p>Click a level's name (<strong>LOD0</strong>, <strong>LOD1</strong>...) to isolate it. Only that level
+stays in the viewport, and the name lights up while it does. Click it again,
+or <strong>Clear</strong> on the solo banner, to put back exactly what was showing before.</p>
+<p><strong>Detect LODs</strong> picks up LODs you made before the asset was managed. Any mesh
+named <code>&lt;name&gt;_LOD&lt;n&gt;</code> (n 1-8) whose <code>&lt;name&gt;</code> matches one of the asset's Game
+meshes is moved into <code>&lt;asset&gt; LOD&lt;n&gt;</code> as a hand-made level, renamed to the
+suite's pattern, and given a screen size that halves per level (0.5, 0.25,
+0.125...). A Game mesh still named <code>_LOD0</code> loses the suffix. If LOD0 is empty
+it is built from Game afterwards. Matching is on the whole name, so
+<code>SM_StoolMedium_LOD1</code> never goes to Stool. The button only shows when
+something is found; <strong>Detect All LODs</strong> at the top does every asset at once.</p>
+<p>The UV name field beside Refresh Tri Counts names the lightmap UV; UV1 is
+created for your packer, never unwrapped or packed. Lightmap UVs also makes
+UV1 the selected channel, so the UV editor opens on the lightmap. The render
+channel stays on UV0.</p>
+<hr />
+<h2 id="shards-tab">Shards tab<a class="headerlink" href="#shards-tab" title="Permanent link">&para;</a></h2>
+<p><img alt="Destructibles" src="../screenshots/high-low-manager/01-rob_hl_show_broken.png" /></p>
+<p>One asset, two states: the whole object and the pieces it breaks into. The
+pieces reuse the whole object's texture set, so there is no second bake and no
+second asset — only a second collection and a switch for which you are
+looking at.</p>
+<p>The tab is a list and a card. The list has a line per asset and part - name,
+piece count and the shard actions. Click a name and its card opens with the
+<strong>Whole / Broken / Both</strong> switch and solo at the top - parts have it too:
+<strong>Whole</strong> shows the part alone in its asset's Final, <strong>Broken</strong> takes it off
+screen so the shards aren't sitting inside it. Below, <strong>Fracture Setup</strong>
+shows how it will break, set up
+before the cut: interior (texture region or material), the <strong>Inside</strong>,
+<strong>Edges</strong> and <strong>End Grain</strong> regions with a <strong>Pick</strong> button each, texture
+grain, grain axis, edge width and <strong>Core Keeps Original</strong>. <strong>Open UV Picker</strong>
+opens the asset's texture in an Image Editor window of its own with the picker
+panel showing, and <strong>Pick</strong> starts picking into that slot straight away.
+<strong>Explode</strong> spreads the pieces apart to see them - display only, export puts
+them back together. A solo on shards always shows them, whatever their eye
+says.</p>
+<p><strong>Type</strong> sets how the material breaks: Generic, Stone / Rock (chunks of
+joined cells), Concrete / Masonry (chunks inside, crumbs at the surface),
+Glass Pane (wavy radial and ring cracks round the hit, with Rings for how many ring cracks and Hole to knock the middle out), Ceramic / Pottery (even shards),
+Wood Splinters, <strong>Snapped Plank</strong> (jagged interlocking splintered ends and
+loose splinters - snapped in the middle, at one end or both), Ice / Crystal
+(twisting wedge shards), Slate / Layered (flat plates), Blocks, and Impact
+Hole (debris round the hit, the rest one piece with a hole in it). <strong>T</strong> in
+the modal cycles them, <strong>B</strong> picks where a plank breaks.</p>
+<p><strong>Cracked High:</strong> the explode menu on a group's row in the High/Low tab
+lists every type - pick how it breaks and that group's bake high is cracked
+in the same live modal, the pieces left in place with a groove along every
+crack (Crack Gap, K), joined into one object or kept as separate objects
+(P), so the intact low bakes the cracks - or, with L, the low is cracked to
+match as well (real crack geometry, groove walls on the texture beside
+them), and Restore puts both back. Materials are kept, shell depth
+limits how deep the cracks go, and the intact high waits in a never-baked
+"Uncracked" collection; the arrow button puts it back.</p>
+<p><strong>High + Low Shards</strong> (the card's High + Low… button): the same cut on the
+Final copies and the bake highs, so every shard gets a bake pair "Shard NN"
+whose low half is the shard itself (a linked copy) - rough breaks on the
+high (H), clean on the low, and the insides on unique, non-overlapping UVs
+packed into the Inside region so each break bakes its own detail.</p>
+<p><strong>Fracture</strong> (on the card) breaks the Final copies
+into pieces, live. Scroll sets the piece count; <strong>G</strong> moves the seed cloud,
+<strong>S</strong> spreads it, <strong>X / Y / Z</strong> stretch the pieces along that axis, <strong>D</strong>
+sets the shell depth (then <strong>X / Y / Z</strong> for one axis - a column chipped round
+its sides with its top and bottom whole), <strong>N</strong> adds noise to the break faces
+and <strong>I</strong> sets the impact radius, each set with a click; <strong>Ctrl+click</strong> adds an
+impact point, where pieces get smaller, <strong>C</strong> clears them and <strong>R</strong> reseeds.
+Noise is matched on both sides of every crack, so the pieces still fit. While Fracture runs, a controls panel in the lower left of the viewport lists every key with the value it changes, the one being dragged lit up - and it is clickable: click a row instead of pressing its key. A 3D handle on the seed cloud moves (centre, arrows), rotates (rings), stretches (boxes) and spreads it (white circle), and impact points can be dragged over the model, − / + for the piece count, a Stretch number for that axis, Cut or Cancel to finish. With a shell depth
+only the outer layer breaks into chips and the core stays one whole piece -
+the chipped column over a solid shaft - and hollow objects cut into rings,
+never with a lid across the cavity. The seeds and their cells are drawn over the
+model while you shape them, and nothing is cut until <strong>Enter</strong> - <strong>Esc</strong>
+leaves the file exactly as it was. Every piece comes out closed, keeps the
+texture-set material outside and gets an <em>Interior</em> material on the cut
+faces, and is numbered and filed like an assigned shard. The redo panel keeps
+every value editable, and fracturing again replaces the previous pieces.
+The inside of the pieces gets a material of its own (optionally one of the Material ID Setter's ID materials) or a <strong>texture region</strong> of the asset's own texture - no extra material or draw call, UVs at the outside's texel density, turned and offset at random so pieces do not repeat. Pick the region in the Image Editor's <strong>R.O.B Tools</strong> tab (<strong>Fracture Interior</strong>) by box, atlas grid tile or UV island; <strong>M</strong> in the modal switches between the two. For wood and other textures with a direction, give the region a grain (U or V) and Fracture a grain axis (<strong>A</strong>: the asset's local X, Y or Z): the inside then follows the grain on every piece, and faces cut across it use a separate <strong>End Grain</strong> region. An <strong>Edges</strong> region textures a band of cut face along the object's outside (<strong>Edge Width</strong>, <strong>W</strong>) - a hollow object's walls are all edge - and with a shell depth the core keeps the object's own texture (<strong>Core Keeps Original</strong>, <strong>O</strong>). Without noise, the break edges come out sharp with bevel weight 1 and crease 1 (<strong>E</strong>) - ready for a weight-limited Bevel modifier and a Subdivision Surface - the shell core's included, and every piece keeps the object's own sharp edges, bevel weights and creases.</p>
+<p>Fracture cuts the Final copies, never the bake lows. With the native cutter installed (shipped in the release zips) the cut runs in compiled code - the same pieces, several times faster on heavy meshes; the redo panel's <strong>Native Cutter</strong> turns it off, and without it the cut runs in Python.</p>
+<p><img alt="Shard actions" src="../screenshots/popups/menu-ROBHL_MT_broken_actions.png" /></p>
+<p><strong>Rename All Shards</strong> brings the piece names back in line with the Game mesh.
+The panel warns when they have drifted, rather than leaving it to be noticed
+in the engine where nothing groups.</p>
+<hr />
+<h2 id="project-folders">Project Folders<a class="headerlink" href="#project-folders" title="Permanent link">&para;</a></h2>
+<p><img alt="Project Folders" src="../screenshots/high-low-manager/09-robhl_folders_open.png" /></p>
+<p>Three roots, set once at the start of a project. The header shows <code>n of 3</code>,
+in red at zero, and a tick at three.</p>
+<table>
+<thead>
+<tr>
+<th>Root</th>
+<th>Used by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Export root</strong></td>
+<td>the bake pipeline and Painter</td>
+</tr>
+<tr>
+<td><strong>Final / game meshes</strong></td>
+<td>Final, LOD and Shards exports</td>
+</tr>
+<tr>
+<td><strong>Textures</strong></td>
+<td>read by Apply Your Shader</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use .blend Folders</strong> fills all three from the current file's location.</p>
+<p><img alt="Folder Names" src="../screenshots/high-low-manager/15-robhl_folders_open--robhl_subfolder_names_open.png" /></p>
+<p>With subfolders on, the four names are editable here — they are an add-on
+preference, the same in every file.</p>
+<hr />
+<h2 id="export">Export<a class="headerlink" href="#export" title="Permanent link">&para;</a></h2>
+<p><img alt="Export" src="../screenshots/high-low-manager/07-robhl_export_fbx_open.png" /></p>
+<p>One button and a choice of what it sends. The destination is shown under the
+button before you press it, because two roots and seven kinds is exactly the
+arithmetic a person should not be doing in their head.</p>
+<p>Anything named "All" exports only <strong>checked</strong> assets.</p>
+<p><img alt="Export Details" src="../screenshots/high-low-manager/08-robhl_export_fbx_open--robhl_export_info_open.png" /></p>
+<ul>
+<li>High: no tangents. Low: tangents on.</li>
+<li>Bake Set: per-group FBX plus <code>&lt;asset&gt;_bake.json</code>.</li>
+<li>Final + LODs: one file, <code>_LOD&lt;n&gt;</code> names.</li>
+</ul>
+<p>Painter exports add their own options: suffix, whether to include exploded
+meshes, and whether to combine checked assets into one file.</p>
+<hr />
+<h2 id="the-floating-popup">The floating popup<a class="headerlink" href="#the-floating-popup" title="Permanent link">&para;</a></h2>
+<p>The same panel body, away from the sidebar, at a width that lets a real group
+name sit beside its buttons. It draws whichever tab you are on:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="High/Low" src="../screenshots/popups/popup-highlow-popup-highlow.png" /></td>
+<td><img alt="Final" src="../screenshots/popups/popup-highlow-popup-final.png" /></td>
+</tr>
+<tr>
+<td><img alt="LOD" src="../screenshots/popups/popup-highlow-popup-lod.png" /></td>
+<td><img alt="Shards" src="../screenshots/popups/popup-highlow-popup-shards.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>A cluster's own popup shows its parts and their visibility without expanding
+the panel:</p>
+<p><img alt="Cluster visibility" src="../screenshots/popups/popup-highlow-cluster-popup.png" /></p>
+<p><strong>Customise</strong> mode puts a checkbox on each section header, choosing what the
+popup carries. The sidebar always shows everything, so a section can never be
+lost — only kept out of the popup.</p>
+<hr />
+<h2 id="dialogs">Dialogs<a class="headerlink" href="#dialogs" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Add Group" src="../screenshots/dialogs/dialog-robhl.add_group.png" /></td>
+<td><img alt="Rename Group" src="../screenshots/dialogs/dialog-robhl.rename_group.png" /></td>
+<td><img alt="Delete Group" src="../screenshots/dialogs/dialog-robhl.delete_group.png" /></td>
+</tr>
+<tr>
+<td><img alt="New Part" src="../screenshots/dialogs/dialog-robhl.part_add.png" /></td>
+<td><img alt="Rename Part" src="../screenshots/dialogs/dialog-robhl.part_rename.png" /></td>
+<td><img alt="Delete Part" src="../screenshots/dialogs/dialog-robhl.part_delete.png" /></td>
+</tr>
+<tr>
+<td><img alt="Delete Asset" src="../screenshots/dialogs/dialog-robhl.delete_asset.png" /></td>
+<td><img alt="Delete Container" src="../screenshots/dialogs/dialog-robhl.no_bake_delete.png" /></td>
+<td><img alt="Clean Up Empties" src="../screenshots/dialogs/dialog-robhl.cleanup_empties.png" /></td>
+</tr>
+<tr>
+<td><img alt="Apply Name" src="../screenshots/dialogs/dialog-robhl.apply_name.png" /></td>
+<td><img alt="Delete Final" src="../screenshots/dialogs/dialog-robhl.game_delete.png" /></td>
+<td><img alt="Delete Shards" src="../screenshots/dialogs/dialog-robhl.broken_delete.png" /></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="if-something-looks-wrong">If something looks wrong<a class="headerlink" href="#if-something-looks-wrong" title="Permanent link">&para;</a></h2>
+<p><strong>My high/low meshes disappeared when I opened Final.</strong> They are hidden on
+purpose, so the copies that ship are the only thing you can edit while you are
+in there — see <a href="#where-did-my-mesh-go">Where did my mesh go?</a> above. <strong>Show
+Everything</strong> brings them back.</p>
+<p><strong>An asset vanished from Final or LOD.</strong> Both tabs filter out assets whose
+export checkbox is off, and LOD also filters out anything with <strong>Has LOD
+Levels</strong> unticked. The LOD tab says how many are hidden that way.</p>
+<p><strong>Export says no folder set.</strong> The destination line under the Export button
+names which root is missing. Set it in Project Folders.</p>
+<p><strong>Shard names do not match the Game mesh.</strong> Press <strong>Rename All Shards</strong>.</p>
+<p><strong>The eyes do not line up.</strong> They should — every row reserves the space a
+cluster triangle would take. If you see two columns of eyes, that is a bug
+worth reporting.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © Robert Allsopp
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "toc.follow", "search.suggest", "search.highlight", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1214 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Manuals for the R.O.B Tools Blender add-on suite">
+      
+      
+        <meta name="author" content="Robert Allsopp">
+      
+      
+        <link rel="canonical" href="https://newdeal666.github.io/rob-tools-manual/material-id-setter/">
+      
+      
+        <link rel="prev" href="../baker/">
+      
+      
+        <link rel="next" href="../level-manager/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Material ID Setter - R.O.B Tools</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#material-id-setter" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="R.O.B Tools" class="md-header__button md-logo" aria-label="R.O.B Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            R.O.B Tools
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Material ID Setter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to dark"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to light"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="R.O.B Tools" class="md-nav__button md-logo" aria-label="R.O.B Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    R.O.B Tools
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manuals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manuals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../high-low-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High/Low Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R.O.B Baker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material ID Setter
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material ID Setter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-colours-per-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two colours per material
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-library-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The library list
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bevel-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bevel Width
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bevel Width">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blended-bevels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blended bevels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-slots-stay-tidy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material slots stay tidy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-and-vertex-widths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge and vertex widths
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assign-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assign &amp; Build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit Material
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material Palette
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bevel-preview-cycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bevel Preview (Cycles)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save / Load
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sections-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections move
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-something-looks-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If something looks wrong
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R.O.B Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preferences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screenshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screenshots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-colours-per-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two colours per material
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-library-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The library list
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bevel-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bevel Width
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bevel Width">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blended-bevels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blended bevels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-slots-stay-tidy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material slots stay tidy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-and-vertex-widths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge and vertex widths
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assign-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assign &amp; Build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit Material
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material Palette
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bevel-preview-cycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bevel Preview (Cycles)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save / Load
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sections-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections move
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-something-looks-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If something looks wrong
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="material-id-setter">Material ID Setter<a class="headerlink" href="#material-id-setter" title="Permanent link">&para;</a></h1>
+<p>A library of ID materials, each with two colours: one to look at in Blender,
+one to bake. Assign them to objects or faces, set per-material bevel widths,
+and hand them to the Baker, Substance Painter or Marmoset.</p>
+<p>Sidebar (<strong>N</strong>) → <strong>R.O.B Tools</strong> tab → <strong>ID</strong>.</p>
+<p><img alt="The panel" src="../screenshots/material-id/00-overview.png" /></p>
+<hr />
+<h2 id="two-colours-per-material">Two colours per material<a class="headerlink" href="#two-colours-per-material" title="Permanent link">&para;</a></h2>
+<p>This is the idea the whole tool is built on. Every entry in the library
+carries:</p>
+<ul>
+<li>a <strong>Display</strong> colour — what you see in the viewport, with its own metallic,
+  roughness, alpha and emission, so the scene stays readable while you work</li>
+<li>an <strong>ID</strong> colour — the flat, unlit colour that gets baked and that Substance
+  Painter and Marmoset match against</li>
+</ul>
+<p><strong>Preview</strong> and <strong>ID (export)</strong> recolour the existing materials between the
+two. The mode is not a bake setting: the Baker, the vertex-colour stamp and
+the Marmoset JSON plugin all read ID colours from the library in <strong>either</strong>
+mode. Switch to ID only if you are baking the exported base colours directly.</p>
+<p><img alt="Viewport / Export Mode" src="../screenshots/material-id/04-rob_matid_show_mode.png" /></p>
+<p><strong>Stamp IDs to Vertex Colors</strong> writes each face's ID colour into a <code>MatID</code>
+colour attribute. Do it <strong>before exporting a Marmoset bake set</strong>: vertex
+colours are what survive FBX, and Toolbag bakes that attribute as its Vertex
+Color map, which its Color Selection masks then read like a Material ID map.</p>
+<p>Runs on selected meshes, or on every mesh using ID materials if nothing is
+selected. Object Mode only — in Edit Mode the mesh data is not synced yet.</p>
+<hr />
+<h2 id="the-library-list">The library list<a class="headerlink" href="#the-library-list" title="Permanent link">&para;</a></h2>
+<p>Always visible, directly under the mode box. Add, remove, reorder, and the
+eyedropper.</p>
+<p>The <strong>eyedropper</strong> makes the list follow the mesh: pick a face and the library
+jumps to that face's ID, instead of you hunting for it in a list of 128.</p>
+<hr />
+<h2 id="bevel-width">Bevel Width<a class="headerlink" href="#bevel-width" title="Permanent link">&para;</a></h2>
+<p><img alt="The width strip and Edit Material" src="../screenshots/material-id/02-rob_matid_show_edit.png" /></p>
+<p>Never collapses, because the whole point is that setting a width is one click
+with no hunting. The ID comes from the <strong>faces</strong>, not from the list selection,
+so the library does not have to be on the right entry first — the header shows
+which ID the width will apply to.</p>
+<p>Each button is a preset from the add-on preferences; the live one is
+depressed. <strong>Custom Width…</strong> takes any radius and does exactly what a preset
+button does.</p>
+<p>With faces selected, <strong>every selected face keeps its own ID</strong> and takes the
+width, and the width reaches across the border of the selection exactly as
+if you had marked the border edges in Edge mode - a bevel is made from both
+faces at an edge, so stopping at the selection would round it lopsided. The width is stored <strong>on the faces</strong> (<code>MatID_FaceWidth</code>), so each ID
+stays one material however many widths you use - no <code>~10mm</code> copies appear.
+Any edge or vertex width inside the selection is cleared, so the whole
+selection really ends up at that width. In Object Mode the width goes on
+every face of the selected objects.</p>
+<p>Assigning an ID to faces puts them back on that ID's own width. Older files
+whose faces use <code>~mm</code> variant materials keep working; clicking a width on
+those faces moves them onto the ID's base material.</p>
+<p>There is a pie menu for the same presets, for when your hands are on the mesh.</p>
+<h3 id="blended-bevels">Blended bevels<a class="headerlink" href="#blended-bevels" title="Permanent link">&para;</a></h3>
+<p>Where two IDs with different widths meet, the width used to cut from one to
+the other at the boundary. <strong>Blend Bevels</strong> (under the width buttons) eases it
+instead, over <strong>Blend</strong> - the distance either side of each ID boundary the
+width takes to change. Select the meshes, set the distance, press it.</p>
+<p>It writes a per-corner offset (<code>MatID_BevelDelta</code>) onto the selected meshes
+and wires their ID materials to read it: radius = the ID's width + the
+offset. A mesh that was never blended reads 0 there, so it keeps its own
+widths even when it shares a material with a blended one. The ease is
+sampled at vertices, so it cannot be shorter than the faces it crosses. The
+<strong>X</strong> beside the button clears the blend from the selection.</p>
+<p>R.O.B Baker bakes it on both backends: Cycles reads the attribute itself,
+and the native tracer takes the offsets with the scene (tracer protocol 28).</p>
+<p>A mesh that already carries a blend re-blends by itself when a width or an
+ID on it changes.</p>
+<h3 id="material-slots-stay-tidy">Material slots stay tidy<a class="headerlink" href="#material-slots-stay-tidy" title="Permanent link">&para;</a></h3>
+<p>Every assign and width change tidies the object's slots: slots holding the
+same material merge, and R.O.B ID slots no face uses go. Slots holding your
+own materials stay, and every face keeps its material. In older files, width
+variants nothing uses any more are deleted from the file as well.</p>
+<h3 id="edge-and-vertex-widths">Edge and vertex widths<a class="headerlink" href="#edge-and-vertex-widths" title="Permanent link">&para;</a></h3>
+<p>Select an edge or a vertex in Edit Mode and click a width: it gets its own
+width while the faces keep theirs. Whole faces selected still go to the
+faces (Vertex or Face select mode); Edge select mode goes to the selected
+edges; Vertex select mode with no whole face goes to the selected vertices.
+The header shows "1 edge" or "1 vert". <strong>Custom Width…</strong> works the same way.
+A vertex width rounds every edge meeting at that corner, near the corner.</p>
+<p>The width holds out to its own distance from the edge, then eases back to
+the faces' widths over <strong>Blend Distance</strong>. It is stored as the width of the
+surface around the edge (per-edge <code>MatID_EdgeWidth</code>, folded into the same
+<code>MatID_BevelDelta</code> offset), because the bake's bevel - Cycles, the tracer and
+Toolbag alike - rounds by distance from the point being shaded, not by edge.
+Edges sharing a corner with the marked one round wider near that corner.
+Where two marks share a vertex - a hole's rim and its wall edges, say - the
+one set <strong>last</strong> wins; otherwise the nearest mark does. A face click counts
+as a click too - a width or <strong>Assign to Faces</strong> clears the edge and vertex
+widths inside the selection, and older marks stop at its vertices. <strong>Assign
+to Objects</strong> clears every edge and vertex width on the object. An edge narrower than
+the faces around it holds its width out as far as their width, or the wider
+bevel nearby would still round it.</p>
+<p><strong>Blend Selection</strong> - the Blend button in Edit Mode with edges or vertices
+selected - eases widths along a run: give the first and last edge (or loop)
+their widths, select them with everything between, and press it. Each edge
+between takes a width by how far along the run it sits, measured along the
+mesh, so a curved run or uneven loop spacing still changes evenly over its
+real length. In Object Mode the button is <strong>Blend Bevels</strong>.</p>
+<p><strong>Shift+G → Mat ID Bevel Width</strong> (Select Similar) selects everything at the
+same width as the selection: faces by their ID's width (<strong>Same ID</strong> in the
+redo panel narrows it to the same ID), edges and vertices by their own width.</p>
+<p>Edge and vertex widths don't blend ID boundaries by themselves; a mesh's
+boundaries only blend once <strong>Blend Bevels</strong> has been pressed on it.
+<strong>X</strong> in Edit Mode clears the selected edges or vertices; in Object Mode it
+clears everything.</p>
+<hr />
+<h2 id="assign-build">Assign &amp; Build<a class="headerlink" href="#assign-build" title="Permanent link">&para;</a></h2>
+<p><img alt="Assign &amp; Build" src="../screenshots/material-id/01-rob_matid_show_assign.png" /></p>
+<p>The big button follows the mode. In <strong>Object Mode</strong> it is <strong>Assign to
+Objects</strong>: it replaces the material on every selected mesh with the active
+ID. Materials live on mesh data, so <strong>linked duplicates change too</strong> — that is
+Blender, not the add-on, but it surprises people. In <strong>Edit Mode</strong> it is
+<strong>Assign to Faces</strong>: the active ID goes on the selected faces. The header
+shows how many objects or faces it will act on.</p>
+<p><strong>Build Materials</strong> creates or refreshes a material for every ID in the
+current mode. Run it after editing colours. <strong>Select</strong> selects every object
+using the active ID.</p>
+<hr />
+<h2 id="edit-material">Edit Material<a class="headerlink" href="#edit-material" title="Permanent link">&para;</a></h2>
+<p>The two colour rows with hex fields, and an arrow between them to copy one
+colour into the other.</p>
+<p>Below them, the <strong>display surface</strong> — metallic, roughness, alpha, thin wall,
+emission colour and power. These affect the Preview look only; they never
+reach a bake.</p>
+<p>Then <strong>Bevel Radius</strong> and <strong>Bevel Samples</strong> for this material, and a <strong>Notes</strong>
+field.</p>
+<hr />
+<h2 id="material-palette">Material Palette<a class="headerlink" href="#material-palette" title="Permanent link">&para;</a></h2>
+<p><img alt="Material Palette" src="../screenshots/material-id/05-rob_matid_show_palette.png" /></p>
+<p>Builds a grid of 10 cm swatch cubes, four wide with a 1 cm gap, parented to a
+movable empty in a <code>MatID Palette</code> collection. Handy as a physical legend
+beside the model, and as a quick check that two IDs are actually
+distinguishable.</p>
+<p><strong>Named only</strong> skips unclaimed slots still called <code>ID_##</code>, so a 128-slot
+library builds only the swatches you actually use.</p>
+<hr />
+<h2 id="bevel-preview-cycles">Bevel Preview (Cycles)<a class="headerlink" href="#bevel-preview-cycles" title="Permanent link">&para;</a></h2>
+<p><img alt="Bevel Preview" src="../screenshots/material-id/06-rob_matid_show_preview.png" /></p>
+<p>Switches the viewport to a Cycles render that shows the bevel widths as they
+will actually appear, since a bevel shader does not show in Solid mode. The
+quality dropdown is on the header; <strong>Apply Quality</strong> re-applies it, and the
+solid icon exits.</p>
+<p>Low is the fastest and is usually enough to tell two widths apart.</p>
+<hr />
+<h2 id="save-load">Save / Load<a class="headerlink" href="#save-load" title="Permanent link">&para;</a></h2>
+<p><img alt="Save / Load" src="../screenshots/material-id/03-rob_matid_show_library.png" /></p>
+<p>The library is a file, not scene data, so it follows you between projects. The
+header shows <strong>unsaved</strong> in red when it has drifted, and Save gains an
+asterisk.</p>
+<p><strong>Import</strong> and <strong>Export</strong> move a library between machines. <strong>Export Color
+Reference</strong> writes a CSV legend — name, ID hex, display hex, bevel radius,
+samples, metallic, roughness, alpha and notes — which is what to hand a
+texture artist working in Painter.</p>
+<hr />
+<h2 id="sections-move">Sections move<a class="headerlink" href="#sections-move" title="Permanent link">&para;</a></h2>
+<p>Every section except the mode box and the library list can be reordered with
+the small arrows on its header, so the panel can be arranged in the order you
+actually work.</p>
+<p><img alt="The floating popup" src="../screenshots/popups/popup-material-id-popup.png" /></p>
+<p>The popup carries the same controls away from the sidebar.</p>
+<hr />
+<h2 id="if-something-looks-wrong">If something looks wrong<a class="headerlink" href="#if-something-looks-wrong" title="Permanent link">&para;</a></h2>
+<p><strong>A material the Baker or Marmoset cannot stamp.</strong> The stamp takes its colours
+from the ID library, so a material the library does not define can never be
+stamped. Add it to the library, or reassign those faces to an ID that exists.</p>
+<p><strong>Bevel widths all look the same.</strong> Solid mode does not show a bevel shader —
+use Bevel Preview.</p>
+<p><strong>Edited colours have not changed anything.</strong> Editing the library entry does
+not touch existing materials. Press <strong>Build Materials</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © Robert Allsopp
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "toc.follow", "search.suggest", "search.highlight", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
